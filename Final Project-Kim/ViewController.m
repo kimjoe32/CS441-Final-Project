@@ -11,19 +11,19 @@
 @interface ViewController ()
 @end
 
-NSMutableArray * groundPatchArray;
+NSMutableArray * plantInfoArray;
 @implementation ViewController
 
 - (void)viewDidLoad {
     for (NSInteger i =0; i < [_plantButtons count]; i++)
     {
-        groundPatch * gp = [groundPatch alloc];
-        gp.isWatered = NO;
-        gp.isPlanted = NO;
-        gp.lastWatered = nil;
-        gp.plantTime = nil;
-        gp.location = i + 1;
-        [groundPatchArray addObject:gp];
+        plantInfo * pi = [plantInfo alloc];
+        pi.isWatered = NO;
+        pi.isPlanted = NO;
+        pi.lastWatered = nil;
+        pi.plantTime = nil;
+        pi.location = i + 1;
+        [plantInfoArray addObject:pi];
     }
     
     for (UIImageView * img in _groundImages)
@@ -41,9 +41,9 @@ NSMutableArray * groundPatchArray;
         [coder encodeObject:[b imageForState:UIControlStateNormal] forKey:b.restorationIdentifier];
     }
     
-    for (groundPatch * gp in groundPatchArray)
+    for (plantInfo * pi in plantInfoArray)
     {
-        [gp saveData];
+        [pi saveData];
     }
     
     for (UIImageView * img in _groundImages)
@@ -62,9 +62,9 @@ NSMutableArray * groundPatchArray;
            forState:UIControlStateNormal];
     }
     
-    for (groundPatch * gp in groundPatchArray)
+    for (plantInfo * pi in plantInfoArray)
     {
-        [gp loadData];
+        [pi loadData];
     }
     
     for (UIImageView * img in _groundImages)

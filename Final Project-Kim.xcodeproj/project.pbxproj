@@ -13,7 +13,52 @@
 		6CBD1D2E1E9188D7006D1BE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D2C1E9188D7006D1BE4 /* Main.storyboard */; };
 		6CBD1D301E9188D7006D1BE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D2F1E9188D7006D1BE4 /* Assets.xcassets */; };
 		6CBD1D331E9188D7006D1BE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D311E9188D7006D1BE4 /* LaunchScreen.storyboard */; };
-		6CBD1D3C1E91B1A3006D1BE4 /* groundPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD1D3B1E91B1A3006D1BE4 /* groundPatch.m */; };
+		6CBD1D3C1E91B1A3006D1BE4 /* plantInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD1D3B1E91B1A3006D1BE4 /* plantInfo.m */; };
+		6CBD1D741E91EE4E006D1BE4 /* Cauliflower_Stage_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D3F1E91EE4E006D1BE4 /* Cauliflower_Stage_1.png */; };
+		6CBD1D751E91EE4E006D1BE4 /* Cauliflower_Stage_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D401E91EE4E006D1BE4 /* Cauliflower_Stage_2.png */; };
+		6CBD1D761E91EE4E006D1BE4 /* Cauliflower_Stage_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D411E91EE4E006D1BE4 /* Cauliflower_Stage_3.png */; };
+		6CBD1D771E91EE4E006D1BE4 /* Cauliflower_Stage_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D421E91EE4E006D1BE4 /* Cauliflower_Stage_4.png */; };
+		6CBD1D781E91EE4E006D1BE4 /* Cauliflower_Stage_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D431E91EE4E006D1BE4 /* Cauliflower_Stage_5.png */; };
+		6CBD1D791E91EE4E006D1BE4 /* Cauliflower_Stage_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D441E91EE4E006D1BE4 /* Cauliflower_Stage_6.png */; };
+		6CBD1D7A1E91EE4E006D1BE4 /* Melon_Stage_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D461E91EE4E006D1BE4 /* Melon_Stage_1.png */; };
+		6CBD1D7B1E91EE4E006D1BE4 /* Melon_Stage_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D471E91EE4E006D1BE4 /* Melon_Stage_2.png */; };
+		6CBD1D7C1E91EE4E006D1BE4 /* Melon_Stage_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D481E91EE4E006D1BE4 /* Melon_Stage_3.png */; };
+		6CBD1D7D1E91EE4E006D1BE4 /* Melon_Stage_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D491E91EE4E006D1BE4 /* Melon_Stage_4.png */; };
+		6CBD1D7E1E91EE4E006D1BE4 /* Melon_Stage_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D4A1E91EE4E006D1BE4 /* Melon_Stage_5.png */; };
+		6CBD1D7F1E91EE4E006D1BE4 /* Melon_Stage_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D4B1E91EE4E006D1BE4 /* Melon_Stage_6.png */; };
+		6CBD1D801E91EE4E006D1BE4 /* Potato_Stage_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D4D1E91EE4E006D1BE4 /* Potato_Stage_1.png */; };
+		6CBD1D811E91EE4E006D1BE4 /* Potato_Stage_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D4E1E91EE4E006D1BE4 /* Potato_Stage_2.png */; };
+		6CBD1D821E91EE4E006D1BE4 /* Potato_Stage_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D4F1E91EE4E006D1BE4 /* Potato_Stage_3.png */; };
+		6CBD1D831E91EE4E006D1BE4 /* Potato_Stage_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D501E91EE4E006D1BE4 /* Potato_Stage_4.png */; };
+		6CBD1D841E91EE4E006D1BE4 /* Potato_Stage_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D511E91EE4E006D1BE4 /* Potato_Stage_5.png */; };
+		6CBD1D851E91EE4E006D1BE4 /* Potato_Stage_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D521E91EE4E006D1BE4 /* Potato_Stage_6.png */; };
+		6CBD1D861E91EE4E006D1BE4 /* Pumpkin_Stage_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D541E91EE4E006D1BE4 /* Pumpkin_Stage_1.png */; };
+		6CBD1D871E91EE4E006D1BE4 /* Pumpkin_Stage_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D551E91EE4E006D1BE4 /* Pumpkin_Stage_2.png */; };
+		6CBD1D881E91EE4E006D1BE4 /* Pumpkin_Stage_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D561E91EE4E006D1BE4 /* Pumpkin_Stage_3.png */; };
+		6CBD1D891E91EE4E006D1BE4 /* Pumpkin_Stage_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D571E91EE4E006D1BE4 /* Pumpkin_Stage_4.png */; };
+		6CBD1D8A1E91EE4E006D1BE4 /* Pumpkin_Stage_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D581E91EE4E006D1BE4 /* Pumpkin_Stage_5.png */; };
+		6CBD1D8B1E91EE4E006D1BE4 /* Pumpkin_Stage_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D591E91EE4E006D1BE4 /* Pumpkin_Stage_6.png */; };
+		6CBD1D8C1E91EE4E006D1BE4 /* Radish_Stage_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D5B1E91EE4E006D1BE4 /* Radish_Stage_1.png */; };
+		6CBD1D8D1E91EE4E006D1BE4 /* Radish_Stage_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D5C1E91EE4E006D1BE4 /* Radish_Stage_2.png */; };
+		6CBD1D8E1E91EE4E006D1BE4 /* Radish_Stage_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D5D1E91EE4E006D1BE4 /* Radish_Stage_3.png */; };
+		6CBD1D8F1E91EE4E006D1BE4 /* Radish_Stage_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D5E1E91EE4E006D1BE4 /* Radish_Stage_4.png */; };
+		6CBD1D901E91EE4E006D1BE4 /* Radish_Stage_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D5F1E91EE4E006D1BE4 /* Radish_Stage_5.png */; };
+		6CBD1D911E91EE4E006D1BE4 /* Sunflower_Stage_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D611E91EE4E006D1BE4 /* Sunflower_Stage_1.png */; };
+		6CBD1D921E91EE4E006D1BE4 /* Sunflower_Stage_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D621E91EE4E006D1BE4 /* Sunflower_Stage_2.png */; };
+		6CBD1D931E91EE4E006D1BE4 /* Sunflower_Stage_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D631E91EE4E006D1BE4 /* Sunflower_Stage_3.png */; };
+		6CBD1D941E91EE4E006D1BE4 /* Sunflower_Stage_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D641E91EE4E006D1BE4 /* Sunflower_Stage_4.png */; };
+		6CBD1D951E91EE4E006D1BE4 /* Sunflower_Stage_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D651E91EE4E006D1BE4 /* Sunflower_Stage_5.png */; };
+		6CBD1D971E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D681E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_1.png */; };
+		6CBD1D981E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D691E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_2.png */; };
+		6CBD1D991E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D6A1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_3.png */; };
+		6CBD1D9A1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D6B1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_4.png */; };
+		6CBD1D9B1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D6C1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_5.png */; };
+		6CBD1D9C1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D6D1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_6.png */; };
+		6CBD1D9D1E91EE4E006D1BE4 /* Tulip_Stage_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D6F1E91EE4E006D1BE4 /* Tulip_Stage_1.png */; };
+		6CBD1D9E1E91EE4E006D1BE4 /* Tulip_Stage_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D701E91EE4E006D1BE4 /* Tulip_Stage_2.png */; };
+		6CBD1D9F1E91EE4E006D1BE4 /* Tulip_Stage_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D711E91EE4E006D1BE4 /* Tulip_Stage_3.png */; };
+		6CBD1DA01E91EE4E006D1BE4 /* Tulip_Stage_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D721E91EE4E006D1BE4 /* Tulip_Stage_4.png */; };
+		6CBD1DA11E91EE4E006D1BE4 /* Tulip_Stage_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D731E91EE4E006D1BE4 /* Tulip_Stage_5.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +72,53 @@
 		6CBD1D2F1E9188D7006D1BE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CBD1D321E9188D7006D1BE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6CBD1D341E9188D7006D1BE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6CBD1D3A1E91B177006D1BE4 /* groundPatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = groundPatch.h; sourceTree = "<group>"; };
-		6CBD1D3B1E91B1A3006D1BE4 /* groundPatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = groundPatch.m; sourceTree = "<group>"; };
+		6CBD1D3A1E91B177006D1BE4 /* plantInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = plantInfo.h; sourceTree = "<group>"; };
+		6CBD1D3B1E91B1A3006D1BE4 /* plantInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = plantInfo.m; sourceTree = "<group>"; };
+		6CBD1D3F1E91EE4E006D1BE4 /* Cauliflower_Stage_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cauliflower_Stage_1.png; sourceTree = "<group>"; };
+		6CBD1D401E91EE4E006D1BE4 /* Cauliflower_Stage_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cauliflower_Stage_2.png; sourceTree = "<group>"; };
+		6CBD1D411E91EE4E006D1BE4 /* Cauliflower_Stage_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cauliflower_Stage_3.png; sourceTree = "<group>"; };
+		6CBD1D421E91EE4E006D1BE4 /* Cauliflower_Stage_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cauliflower_Stage_4.png; sourceTree = "<group>"; };
+		6CBD1D431E91EE4E006D1BE4 /* Cauliflower_Stage_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cauliflower_Stage_5.png; sourceTree = "<group>"; };
+		6CBD1D441E91EE4E006D1BE4 /* Cauliflower_Stage_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cauliflower_Stage_6.png; sourceTree = "<group>"; };
+		6CBD1D461E91EE4E006D1BE4 /* Melon_Stage_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Melon_Stage_1.png; sourceTree = "<group>"; };
+		6CBD1D471E91EE4E006D1BE4 /* Melon_Stage_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Melon_Stage_2.png; sourceTree = "<group>"; };
+		6CBD1D481E91EE4E006D1BE4 /* Melon_Stage_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Melon_Stage_3.png; sourceTree = "<group>"; };
+		6CBD1D491E91EE4E006D1BE4 /* Melon_Stage_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Melon_Stage_4.png; sourceTree = "<group>"; };
+		6CBD1D4A1E91EE4E006D1BE4 /* Melon_Stage_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Melon_Stage_5.png; sourceTree = "<group>"; };
+		6CBD1D4B1E91EE4E006D1BE4 /* Melon_Stage_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Melon_Stage_6.png; sourceTree = "<group>"; };
+		6CBD1D4D1E91EE4E006D1BE4 /* Potato_Stage_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Potato_Stage_1.png; sourceTree = "<group>"; };
+		6CBD1D4E1E91EE4E006D1BE4 /* Potato_Stage_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Potato_Stage_2.png; sourceTree = "<group>"; };
+		6CBD1D4F1E91EE4E006D1BE4 /* Potato_Stage_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Potato_Stage_3.png; sourceTree = "<group>"; };
+		6CBD1D501E91EE4E006D1BE4 /* Potato_Stage_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Potato_Stage_4.png; sourceTree = "<group>"; };
+		6CBD1D511E91EE4E006D1BE4 /* Potato_Stage_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Potato_Stage_5.png; sourceTree = "<group>"; };
+		6CBD1D521E91EE4E006D1BE4 /* Potato_Stage_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Potato_Stage_6.png; sourceTree = "<group>"; };
+		6CBD1D541E91EE4E006D1BE4 /* Pumpkin_Stage_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pumpkin_Stage_1.png; sourceTree = "<group>"; };
+		6CBD1D551E91EE4E006D1BE4 /* Pumpkin_Stage_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pumpkin_Stage_2.png; sourceTree = "<group>"; };
+		6CBD1D561E91EE4E006D1BE4 /* Pumpkin_Stage_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pumpkin_Stage_3.png; sourceTree = "<group>"; };
+		6CBD1D571E91EE4E006D1BE4 /* Pumpkin_Stage_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pumpkin_Stage_4.png; sourceTree = "<group>"; };
+		6CBD1D581E91EE4E006D1BE4 /* Pumpkin_Stage_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pumpkin_Stage_5.png; sourceTree = "<group>"; };
+		6CBD1D591E91EE4E006D1BE4 /* Pumpkin_Stage_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pumpkin_Stage_6.png; sourceTree = "<group>"; };
+		6CBD1D5B1E91EE4E006D1BE4 /* Radish_Stage_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Radish_Stage_1.png; sourceTree = "<group>"; };
+		6CBD1D5C1E91EE4E006D1BE4 /* Radish_Stage_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Radish_Stage_2.png; sourceTree = "<group>"; };
+		6CBD1D5D1E91EE4E006D1BE4 /* Radish_Stage_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Radish_Stage_3.png; sourceTree = "<group>"; };
+		6CBD1D5E1E91EE4E006D1BE4 /* Radish_Stage_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Radish_Stage_4.png; sourceTree = "<group>"; };
+		6CBD1D5F1E91EE4E006D1BE4 /* Radish_Stage_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Radish_Stage_5.png; sourceTree = "<group>"; };
+		6CBD1D611E91EE4E006D1BE4 /* Sunflower_Stage_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sunflower_Stage_1.png; sourceTree = "<group>"; };
+		6CBD1D621E91EE4E006D1BE4 /* Sunflower_Stage_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sunflower_Stage_2.png; sourceTree = "<group>"; };
+		6CBD1D631E91EE4E006D1BE4 /* Sunflower_Stage_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sunflower_Stage_3.png; sourceTree = "<group>"; };
+		6CBD1D641E91EE4E006D1BE4 /* Sunflower_Stage_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sunflower_Stage_4.png; sourceTree = "<group>"; };
+		6CBD1D651E91EE4E006D1BE4 /* Sunflower_Stage_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sunflower_Stage_5.png; sourceTree = "<group>"; };
+		6CBD1D681E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweet_Gem_Berry_Stage_1.png; sourceTree = "<group>"; };
+		6CBD1D691E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweet_Gem_Berry_Stage_2.png; sourceTree = "<group>"; };
+		6CBD1D6A1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweet_Gem_Berry_Stage_3.png; sourceTree = "<group>"; };
+		6CBD1D6B1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweet_Gem_Berry_Stage_4.png; sourceTree = "<group>"; };
+		6CBD1D6C1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweet_Gem_Berry_Stage_5.png; sourceTree = "<group>"; };
+		6CBD1D6D1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweet_Gem_Berry_Stage_6.png; sourceTree = "<group>"; };
+		6CBD1D6F1E91EE4E006D1BE4 /* Tulip_Stage_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tulip_Stage_1.png; sourceTree = "<group>"; };
+		6CBD1D701E91EE4E006D1BE4 /* Tulip_Stage_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tulip_Stage_2.png; sourceTree = "<group>"; };
+		6CBD1D711E91EE4E006D1BE4 /* Tulip_Stage_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tulip_Stage_3.png; sourceTree = "<group>"; };
+		6CBD1D721E91EE4E006D1BE4 /* Tulip_Stage_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tulip_Stage_4.png; sourceTree = "<group>"; };
+		6CBD1D731E91EE4E006D1BE4 /* Tulip_Stage_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tulip_Stage_5.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +155,9 @@
 				6CBD1D271E9188D7006D1BE4 /* AppDelegate.m */,
 				6CBD1D291E9188D7006D1BE4 /* ViewController.h */,
 				6CBD1D2A1E9188D7006D1BE4 /* ViewController.m */,
-				6CBD1D3A1E91B177006D1BE4 /* groundPatch.h */,
-				6CBD1D3B1E91B1A3006D1BE4 /* groundPatch.m */,
+				6CBD1D3A1E91B177006D1BE4 /* plantInfo.h */,
+				6CBD1D3B1E91B1A3006D1BE4 /* plantInfo.m */,
+				6CBD1D3D1E91EE4E006D1BE4 /* Plants */,
 				6CBD1D2C1E9188D7006D1BE4 /* Main.storyboard */,
 				6CBD1D2F1E9188D7006D1BE4 /* Assets.xcassets */,
 				6CBD1D311E9188D7006D1BE4 /* LaunchScreen.storyboard */,
@@ -82,6 +173,122 @@
 				6CBD1D241E9188D7006D1BE4 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6CBD1D3D1E91EE4E006D1BE4 /* Plants */ = {
+			isa = PBXGroup;
+			children = (
+				6CBD1D3E1E91EE4E006D1BE4 /* Cauliflower */,
+				6CBD1D451E91EE4E006D1BE4 /* Melon */,
+				6CBD1D4C1E91EE4E006D1BE4 /* Potato */,
+				6CBD1D531E91EE4E006D1BE4 /* Pumpkin */,
+				6CBD1D5A1E91EE4E006D1BE4 /* Radish */,
+				6CBD1D601E91EE4E006D1BE4 /* Sunflower */,
+				6CBD1D661E91EE4E006D1BE4 /* SweetGemBerry */,
+				6CBD1D6E1E91EE4E006D1BE4 /* Tulip */,
+			);
+			path = Plants;
+			sourceTree = "<group>";
+		};
+		6CBD1D3E1E91EE4E006D1BE4 /* Cauliflower */ = {
+			isa = PBXGroup;
+			children = (
+				6CBD1D3F1E91EE4E006D1BE4 /* Cauliflower_Stage_1.png */,
+				6CBD1D401E91EE4E006D1BE4 /* Cauliflower_Stage_2.png */,
+				6CBD1D411E91EE4E006D1BE4 /* Cauliflower_Stage_3.png */,
+				6CBD1D421E91EE4E006D1BE4 /* Cauliflower_Stage_4.png */,
+				6CBD1D431E91EE4E006D1BE4 /* Cauliflower_Stage_5.png */,
+				6CBD1D441E91EE4E006D1BE4 /* Cauliflower_Stage_6.png */,
+			);
+			path = Cauliflower;
+			sourceTree = "<group>";
+		};
+		6CBD1D451E91EE4E006D1BE4 /* Melon */ = {
+			isa = PBXGroup;
+			children = (
+				6CBD1D461E91EE4E006D1BE4 /* Melon_Stage_1.png */,
+				6CBD1D471E91EE4E006D1BE4 /* Melon_Stage_2.png */,
+				6CBD1D481E91EE4E006D1BE4 /* Melon_Stage_3.png */,
+				6CBD1D491E91EE4E006D1BE4 /* Melon_Stage_4.png */,
+				6CBD1D4A1E91EE4E006D1BE4 /* Melon_Stage_5.png */,
+				6CBD1D4B1E91EE4E006D1BE4 /* Melon_Stage_6.png */,
+			);
+			path = Melon;
+			sourceTree = "<group>";
+		};
+		6CBD1D4C1E91EE4E006D1BE4 /* Potato */ = {
+			isa = PBXGroup;
+			children = (
+				6CBD1D4D1E91EE4E006D1BE4 /* Potato_Stage_1.png */,
+				6CBD1D4E1E91EE4E006D1BE4 /* Potato_Stage_2.png */,
+				6CBD1D4F1E91EE4E006D1BE4 /* Potato_Stage_3.png */,
+				6CBD1D501E91EE4E006D1BE4 /* Potato_Stage_4.png */,
+				6CBD1D511E91EE4E006D1BE4 /* Potato_Stage_5.png */,
+				6CBD1D521E91EE4E006D1BE4 /* Potato_Stage_6.png */,
+			);
+			path = Potato;
+			sourceTree = "<group>";
+		};
+		6CBD1D531E91EE4E006D1BE4 /* Pumpkin */ = {
+			isa = PBXGroup;
+			children = (
+				6CBD1D541E91EE4E006D1BE4 /* Pumpkin_Stage_1.png */,
+				6CBD1D551E91EE4E006D1BE4 /* Pumpkin_Stage_2.png */,
+				6CBD1D561E91EE4E006D1BE4 /* Pumpkin_Stage_3.png */,
+				6CBD1D571E91EE4E006D1BE4 /* Pumpkin_Stage_4.png */,
+				6CBD1D581E91EE4E006D1BE4 /* Pumpkin_Stage_5.png */,
+				6CBD1D591E91EE4E006D1BE4 /* Pumpkin_Stage_6.png */,
+			);
+			path = Pumpkin;
+			sourceTree = "<group>";
+		};
+		6CBD1D5A1E91EE4E006D1BE4 /* Radish */ = {
+			isa = PBXGroup;
+			children = (
+				6CBD1D5B1E91EE4E006D1BE4 /* Radish_Stage_1.png */,
+				6CBD1D5C1E91EE4E006D1BE4 /* Radish_Stage_2.png */,
+				6CBD1D5D1E91EE4E006D1BE4 /* Radish_Stage_3.png */,
+				6CBD1D5E1E91EE4E006D1BE4 /* Radish_Stage_4.png */,
+				6CBD1D5F1E91EE4E006D1BE4 /* Radish_Stage_5.png */,
+			);
+			path = Radish;
+			sourceTree = "<group>";
+		};
+		6CBD1D601E91EE4E006D1BE4 /* Sunflower */ = {
+			isa = PBXGroup;
+			children = (
+				6CBD1D611E91EE4E006D1BE4 /* Sunflower_Stage_1.png */,
+				6CBD1D621E91EE4E006D1BE4 /* Sunflower_Stage_2.png */,
+				6CBD1D631E91EE4E006D1BE4 /* Sunflower_Stage_3.png */,
+				6CBD1D641E91EE4E006D1BE4 /* Sunflower_Stage_4.png */,
+				6CBD1D651E91EE4E006D1BE4 /* Sunflower_Stage_5.png */,
+			);
+			path = Sunflower;
+			sourceTree = "<group>";
+		};
+		6CBD1D661E91EE4E006D1BE4 /* SweetGemBerry */ = {
+			isa = PBXGroup;
+			children = (
+				6CBD1D681E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_1.png */,
+				6CBD1D691E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_2.png */,
+				6CBD1D6A1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_3.png */,
+				6CBD1D6B1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_4.png */,
+				6CBD1D6C1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_5.png */,
+				6CBD1D6D1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_6.png */,
+			);
+			path = SweetGemBerry;
+			sourceTree = "<group>";
+		};
+		6CBD1D6E1E91EE4E006D1BE4 /* Tulip */ = {
+			isa = PBXGroup;
+			children = (
+				6CBD1D6F1E91EE4E006D1BE4 /* Tulip_Stage_1.png */,
+				6CBD1D701E91EE4E006D1BE4 /* Tulip_Stage_2.png */,
+				6CBD1D711E91EE4E006D1BE4 /* Tulip_Stage_3.png */,
+				6CBD1D721E91EE4E006D1BE4 /* Tulip_Stage_4.png */,
+				6CBD1D731E91EE4E006D1BE4 /* Tulip_Stage_5.png */,
+			);
+			path = Tulip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +349,54 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CBD1D971E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_1.png in Resources */,
+				6CBD1D951E91EE4E006D1BE4 /* Sunflower_Stage_5.png in Resources */,
+				6CBD1D811E91EE4E006D1BE4 /* Potato_Stage_2.png in Resources */,
+				6CBD1DA11E91EE4E006D1BE4 /* Tulip_Stage_5.png in Resources */,
+				6CBD1D851E91EE4E006D1BE4 /* Potato_Stage_6.png in Resources */,
+				6CBD1D7E1E91EE4E006D1BE4 /* Melon_Stage_5.png in Resources */,
+				6CBD1D9D1E91EE4E006D1BE4 /* Tulip_Stage_1.png in Resources */,
+				6CBD1D9E1E91EE4E006D1BE4 /* Tulip_Stage_2.png in Resources */,
+				6CBD1D921E91EE4E006D1BE4 /* Sunflower_Stage_2.png in Resources */,
+				6CBD1DA01E91EE4E006D1BE4 /* Tulip_Stage_4.png in Resources */,
+				6CBD1D7C1E91EE4E006D1BE4 /* Melon_Stage_3.png in Resources */,
 				6CBD1D331E9188D7006D1BE4 /* LaunchScreen.storyboard in Resources */,
+				6CBD1D891E91EE4E006D1BE4 /* Pumpkin_Stage_4.png in Resources */,
+				6CBD1D9A1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_4.png in Resources */,
+				6CBD1D9F1E91EE4E006D1BE4 /* Tulip_Stage_3.png in Resources */,
+				6CBD1D7B1E91EE4E006D1BE4 /* Melon_Stage_2.png in Resources */,
+				6CBD1D901E91EE4E006D1BE4 /* Radish_Stage_5.png in Resources */,
+				6CBD1D871E91EE4E006D1BE4 /* Pumpkin_Stage_2.png in Resources */,
+				6CBD1D791E91EE4E006D1BE4 /* Cauliflower_Stage_6.png in Resources */,
+				6CBD1D981E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_2.png in Resources */,
+				6CBD1D8F1E91EE4E006D1BE4 /* Radish_Stage_4.png in Resources */,
+				6CBD1D751E91EE4E006D1BE4 /* Cauliflower_Stage_2.png in Resources */,
+				6CBD1D841E91EE4E006D1BE4 /* Potato_Stage_5.png in Resources */,
+				6CBD1D8B1E91EE4E006D1BE4 /* Pumpkin_Stage_6.png in Resources */,
 				6CBD1D301E9188D7006D1BE4 /* Assets.xcassets in Resources */,
+				6CBD1D8E1E91EE4E006D1BE4 /* Radish_Stage_3.png in Resources */,
+				6CBD1D7A1E91EE4E006D1BE4 /* Melon_Stage_1.png in Resources */,
+				6CBD1D741E91EE4E006D1BE4 /* Cauliflower_Stage_1.png in Resources */,
+				6CBD1D7F1E91EE4E006D1BE4 /* Melon_Stage_6.png in Resources */,
+				6CBD1D771E91EE4E006D1BE4 /* Cauliflower_Stage_4.png in Resources */,
+				6CBD1D9B1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_5.png in Resources */,
+				6CBD1D761E91EE4E006D1BE4 /* Cauliflower_Stage_3.png in Resources */,
+				6CBD1D861E91EE4E006D1BE4 /* Pumpkin_Stage_1.png in Resources */,
+				6CBD1D911E91EE4E006D1BE4 /* Sunflower_Stage_1.png in Resources */,
+				6CBD1D9C1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_6.png in Resources */,
+				6CBD1D821E91EE4E006D1BE4 /* Potato_Stage_3.png in Resources */,
+				6CBD1D8A1E91EE4E006D1BE4 /* Pumpkin_Stage_5.png in Resources */,
+				6CBD1D8D1E91EE4E006D1BE4 /* Radish_Stage_2.png in Resources */,
+				6CBD1D7D1E91EE4E006D1BE4 /* Melon_Stage_4.png in Resources */,
+				6CBD1D931E91EE4E006D1BE4 /* Sunflower_Stage_3.png in Resources */,
+				6CBD1D831E91EE4E006D1BE4 /* Potato_Stage_4.png in Resources */,
+				6CBD1D991E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_3.png in Resources */,
+				6CBD1D781E91EE4E006D1BE4 /* Cauliflower_Stage_5.png in Resources */,
+				6CBD1D941E91EE4E006D1BE4 /* Sunflower_Stage_4.png in Resources */,
 				6CBD1D2E1E9188D7006D1BE4 /* Main.storyboard in Resources */,
+				6CBD1D801E91EE4E006D1BE4 /* Potato_Stage_1.png in Resources */,
+				6CBD1D881E91EE4E006D1BE4 /* Pumpkin_Stage_3.png in Resources */,
+				6CBD1D8C1E91EE4E006D1BE4 /* Radish_Stage_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,7 +410,7 @@
 				6CBD1D2B1E9188D7006D1BE4 /* ViewController.m in Sources */,
 				6CBD1D281E9188D7006D1BE4 /* AppDelegate.m in Sources */,
 				6CBD1D251E9188D7006D1BE4 /* main.m in Sources */,
-				6CBD1D3C1E91B1A3006D1BE4 /* groundPatch.m in Sources */,
+				6CBD1D3C1E91B1A3006D1BE4 /* plantInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

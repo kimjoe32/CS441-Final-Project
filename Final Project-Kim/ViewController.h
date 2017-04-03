@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "groundPatch.h"
+#import "plantInfo.h"
 
 @interface ViewController : UIViewController
 

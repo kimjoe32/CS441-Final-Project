@@ -124,7 +124,7 @@
 		6CBD1D731E91EE4E006D1BE4 /* Tulip_Stage_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tulip_Stage_5.png; sourceTree = "<group>"; };
 		6CBD1DA31E920698006D1BE4 /* wateringCan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wateringCan.png; sourceTree = "<group>"; };
 		6CBD1DA51E920DAD006D1BE4 /* harvest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = harvest.png; sourceTree = "<group>"; };
-		6CBD1DA71E920EE9006D1BE4 /* dryfloor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dryfloor.png; path = groundPictures/dryfloor.png; sourceTree = "<group>"; };
+		6CBD1DA71E920EE9006D1BE4 /* dryfloor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dryfloor.png; path = ../groundPictures/dryfloor.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +164,6 @@
 				6CBD1D3A1E91B177006D1BE4 /* plantInfo.h */,
 				6CBD1D3B1E91B1A3006D1BE4 /* plantInfo.m */,
 				6CBD1D2C1E9188D7006D1BE4 /* Main.storyboard */,
-				6CBD1DA71E920EE9006D1BE4 /* dryfloor.png */,
 				6CBD1D2F1E9188D7006D1BE4 /* Assets.xcassets */,
 				6CBD1D311E9188D7006D1BE4 /* LaunchScreen.storyboard */,
 				6CBD1D341E9188D7006D1BE4 /* Info.plist */,
@@ -302,6 +301,7 @@
 		6CBD1DA21E920698006D1BE4 /* OtherPictures */ = {
 			isa = PBXGroup;
 			children = (
+				6CBD1DA71E920EE9006D1BE4 /* dryfloor.png */,
 				6CBD1DA51E920DAD006D1BE4 /* harvest.png */,
 				6CBD1DA31E920698006D1BE4 /* wateringCan.png */,
 			);

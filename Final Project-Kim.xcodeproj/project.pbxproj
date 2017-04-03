@@ -161,15 +161,15 @@
 				6CBD1D271E9188D7006D1BE4 /* AppDelegate.m */,
 				6CBD1D291E9188D7006D1BE4 /* ViewController.h */,
 				6CBD1D2A1E9188D7006D1BE4 /* ViewController.m */,
-				6CBD1DA21E920698006D1BE4 /* OtherPictures */,
 				6CBD1D3A1E91B177006D1BE4 /* plantInfo.h */,
 				6CBD1D3B1E91B1A3006D1BE4 /* plantInfo.m */,
-				6CBD1D3D1E91EE4E006D1BE4 /* Plants */,
 				6CBD1D2C1E9188D7006D1BE4 /* Main.storyboard */,
 				6CBD1DA71E920EE9006D1BE4 /* dryfloor.png */,
 				6CBD1D2F1E9188D7006D1BE4 /* Assets.xcassets */,
 				6CBD1D311E9188D7006D1BE4 /* LaunchScreen.storyboard */,
 				6CBD1D341E9188D7006D1BE4 /* Info.plist */,
+				6CBD1D3D1E91EE4E006D1BE4 /* Plants */,
+				6CBD1DA21E920698006D1BE4 /* OtherPictures */,
 				6CBD1D231E9188D7006D1BE4 /* Supporting Files */,
 			);
 			path = "Final Project-Kim";

@@ -36,6 +36,36 @@
     plantTime = [NSDate date];
     plantType = type;
     plantStage = 1;
+    
+    switch(type)
+    {
+        case EMPTY:
+            growTime = 0;
+            
+        case CAULIFLOWER:
+            growTime += 1*60;
+            
+        case MELON:
+            growTime += 1*60;
+            
+        case POTATO:
+            growTime += 1*60;
+            
+        case PUMPKIN:
+            growTime += 1*60;
+            
+        case RADISH:
+            growTime += 2*60;
+            
+        case SUNFLOWER:
+            growTime += 1*60;
+            
+        case SWEETGEMBERRY:
+            growTime += 1*60;
+            
+        case TULIP:
+            growTime += 1*60;
+    }
 }
 
 - (void) harvest
@@ -132,28 +162,28 @@
                                               forKey:[NSString stringWithFormat:@"growTime%ld", (long)location]];
     
     [[NSUserDefaults standardUserDefaults] setInteger:plantType
-                                              forKey:[NSString stringWithFormat:@"plantType%ld", (long)location]];
+                                               forKey:[NSString stringWithFormat:@"plantType%ld", (long)location]];
 }
 
 - (void) loadData
 {
     isWatered = [[NSUserDefaults standardUserDefaults] boolForKey:
-                    [NSString stringWithFormat:@"isWatered%ld", (long)location]];
+                 [NSString stringWithFormat:@"isWatered%ld", (long)location]];
     
     isPlanted = [[NSUserDefaults standardUserDefaults] boolForKey:
-                    [NSString stringWithFormat:@"isPlanted%ld", (long)location]];
+                 [NSString stringWithFormat:@"isPlanted%ld", (long)location]];
     
     lastWatered = [[NSUserDefaults standardUserDefaults] objectForKey:
-                      [NSString stringWithFormat:@"lastWatered%ld", (long)location]];
+                   [NSString stringWithFormat:@"lastWatered%ld", (long)location]];
     
     plantTime = [[NSUserDefaults standardUserDefaults] objectForKey:
-                    [NSString stringWithFormat:@"plantTime%ld", (long)location]];
+                 [NSString stringWithFormat:@"plantTime%ld", (long)location]];
     
     growTime = [[NSUserDefaults standardUserDefaults] doubleForKey:
-                 [NSString stringWithFormat:@"growTime%ld", (long)location]];
+                [NSString stringWithFormat:@"growTime%ld", (long)location]];
     
     plantType = (int) [[NSUserDefaults standardUserDefaults] integerForKey:
-                [NSString stringWithFormat:@"plantType%ld", (long)location]];
+                       [NSString stringWithFormat:@"plantType%ld", (long)location]];
 }
 
 - (UIImage*) upgradeCauliflower
@@ -161,18 +191,21 @@
     switch (plantStage)
     {
         case 2:
+            growTime += 2*60;
             return [UIImage imageNamed:@"Cauliflower_Stage_2.png"];
             
         case 3:
+            growTime += 4*60;
             return [UIImage imageNamed:@"Cauliflower_Stage_3.png"];
             
         case 4:
+            growTime += 4*60;
             return [UIImage imageNamed:@"Cauliflower_Stage_4.png"];
             
         case 5:
             growTime += 1*60;
             return [UIImage imageNamed:@"Cauliflower_Stage_5.png"];
-        
+            
         default:
             return [UIImage imageNamed:@"Cauliflower_Stage_6.png"];
     }
@@ -182,17 +215,21 @@
     switch (plantStage)
     {
         case 2:
+            growTime += 2*60;
             return [UIImage imageNamed:@"Melon_Stage_2.png"];
             
         case 3:
+            growTime += 3*60;
             return [UIImage imageNamed:@"Melon_Stage_3.png"];
             
         case 4:
+            growTime += 3*60;
             return [UIImage imageNamed:@"Melon_Stage_4.png"];
             
         case 5:
+            growTime += 3*60;
             return [UIImage imageNamed:@"Melon_Stage_5.png"];
-        
+            
         default:
             return [UIImage imageNamed:@"Melon_Stage_6.png"];
     }
@@ -210,12 +247,13 @@
             return [UIImage imageNamed:@"Potato_Stage_3.png"];
             
         case 4:
+            growTime += 2*60;
             return [UIImage imageNamed:@"Potato_Stage_4.png"];
             
         case 5:
             growTime += 1*60;
             return [UIImage imageNamed:@"Potato_Stage_5.png"];
-        
+            
         default:
             return [UIImage imageNamed:@"Potato_Stage_6.png"];
     }
@@ -225,17 +263,21 @@
     switch (plantStage)
     {
         case 2:
+            growTime += 2*60;
             return [UIImage imageNamed:@"Pumpkin_Stage_2.png"];
             
         case 3:
+            growTime += 3*60;
             return [UIImage imageNamed:@"Pumpkin_Stage_3.png"];
             
         case 4:
+            growTime += 4*60;
             return [UIImage imageNamed:@"Pumpkin_Stage_4.png"];
             
         case 5:
+            growTime += 10*60;
             return [UIImage imageNamed:@"Pumpkin_Stage_5.png"];
-        
+            
         default:
             return [UIImage imageNamed:@"Pumpkin_Stage_6.png"];
     }
@@ -249,6 +291,7 @@
             return [UIImage imageNamed:@"Radish_Stage_2.png"];
             
         case 3:
+            growTime += 2*60;
             return [UIImage imageNamed:@"Radish_Stage_3.png"];
             
         case 4:
@@ -264,12 +307,15 @@
     switch (plantStage)
     {
         case 2:
+            growTime += 2*60;
             return [UIImage imageNamed:@"Sunflower_Stage_2.png"];
             
         case 3:
+            growTime += 3*60;
             return [UIImage imageNamed:@"Sunflower_Stage_3.png"];
             
         case 4:
+            growTime += 2*60;
             return [UIImage imageNamed:@"Sunflower_Stage_4.png"];
             
         default:
@@ -281,17 +327,21 @@
     switch (plantStage)
     {
         case 2:
+            growTime += 4*60;
             return [UIImage imageNamed:@"Sweet_Gem_Berry_Stage_2.png"];
             
         case 3:
+            growTime += 6*60;
             return [UIImage imageNamed:@"Sweet_Gem_Berry_Stage_3.png"];
             
         case 4:
+            growTime += 6*60;
             return [UIImage imageNamed:@"Sweet_Gem_Berry_Stage_4.png"];
             
         case 5:
+            growTime += 6*60;
             return [UIImage imageNamed:@"Sweet_Gem_Berry_Stage_5.png"];
-        
+            
         default:
             return [UIImage imageNamed:@"Sweet_Gem_Berry_Stage_6.png"];
     }
@@ -305,9 +355,11 @@
             return [UIImage imageNamed:@"Tulip_Stage_2.png"];
             
         case 3:
+            growTime += 2*60;
             return [UIImage imageNamed:@"Tulip_Stage_3.png"];
             
         case 4:
+            growTime += 2*60;
             return [UIImage imageNamed:@"Tulip_Stage_4.png"];
             
         default:

@@ -59,6 +59,9 @@
 		6CBD1D9F1E91EE4E006D1BE4 /* Tulip_Stage_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D711E91EE4E006D1BE4 /* Tulip_Stage_3.png */; };
 		6CBD1DA01E91EE4E006D1BE4 /* Tulip_Stage_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D721E91EE4E006D1BE4 /* Tulip_Stage_4.png */; };
 		6CBD1DA11E91EE4E006D1BE4 /* Tulip_Stage_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1D731E91EE4E006D1BE4 /* Tulip_Stage_5.png */; };
+		6CBD1DA41E920698006D1BE4 /* wateringCan.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1DA31E920698006D1BE4 /* wateringCan.png */; };
+		6CBD1DA61E920DAD006D1BE4 /* harvest.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1DA51E920DAD006D1BE4 /* harvest.png */; };
+		6CBD1DA81E920EE9006D1BE4 /* dryfloor.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD1DA71E920EE9006D1BE4 /* dryfloor.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +122,9 @@
 		6CBD1D711E91EE4E006D1BE4 /* Tulip_Stage_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tulip_Stage_3.png; sourceTree = "<group>"; };
 		6CBD1D721E91EE4E006D1BE4 /* Tulip_Stage_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tulip_Stage_4.png; sourceTree = "<group>"; };
 		6CBD1D731E91EE4E006D1BE4 /* Tulip_Stage_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tulip_Stage_5.png; sourceTree = "<group>"; };
+		6CBD1DA31E920698006D1BE4 /* wateringCan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wateringCan.png; sourceTree = "<group>"; };
+		6CBD1DA51E920DAD006D1BE4 /* harvest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = harvest.png; sourceTree = "<group>"; };
+		6CBD1DA71E920EE9006D1BE4 /* dryfloor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dryfloor.png; path = groundPictures/dryfloor.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,10 +161,12 @@
 				6CBD1D271E9188D7006D1BE4 /* AppDelegate.m */,
 				6CBD1D291E9188D7006D1BE4 /* ViewController.h */,
 				6CBD1D2A1E9188D7006D1BE4 /* ViewController.m */,
+				6CBD1DA21E920698006D1BE4 /* OtherPictures */,
 				6CBD1D3A1E91B177006D1BE4 /* plantInfo.h */,
 				6CBD1D3B1E91B1A3006D1BE4 /* plantInfo.m */,
 				6CBD1D3D1E91EE4E006D1BE4 /* Plants */,
 				6CBD1D2C1E9188D7006D1BE4 /* Main.storyboard */,
+				6CBD1DA71E920EE9006D1BE4 /* dryfloor.png */,
 				6CBD1D2F1E9188D7006D1BE4 /* Assets.xcassets */,
 				6CBD1D311E9188D7006D1BE4 /* LaunchScreen.storyboard */,
 				6CBD1D341E9188D7006D1BE4 /* Info.plist */,
@@ -291,6 +299,15 @@
 			path = Tulip;
 			sourceTree = "<group>";
 		};
+		6CBD1DA21E920698006D1BE4 /* OtherPictures */ = {
+			isa = PBXGroup;
+			children = (
+				6CBD1DA51E920DAD006D1BE4 /* harvest.png */,
+				6CBD1DA31E920698006D1BE4 /* wateringCan.png */,
+			);
+			path = OtherPictures;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -354,6 +371,7 @@
 				6CBD1D811E91EE4E006D1BE4 /* Potato_Stage_2.png in Resources */,
 				6CBD1DA11E91EE4E006D1BE4 /* Tulip_Stage_5.png in Resources */,
 				6CBD1D851E91EE4E006D1BE4 /* Potato_Stage_6.png in Resources */,
+				6CBD1DA61E920DAD006D1BE4 /* harvest.png in Resources */,
 				6CBD1D7E1E91EE4E006D1BE4 /* Melon_Stage_5.png in Resources */,
 				6CBD1D9D1E91EE4E006D1BE4 /* Tulip_Stage_1.png in Resources */,
 				6CBD1D9E1E91EE4E006D1BE4 /* Tulip_Stage_2.png in Resources */,
@@ -361,6 +379,7 @@
 				6CBD1DA01E91EE4E006D1BE4 /* Tulip_Stage_4.png in Resources */,
 				6CBD1D7C1E91EE4E006D1BE4 /* Melon_Stage_3.png in Resources */,
 				6CBD1D331E9188D7006D1BE4 /* LaunchScreen.storyboard in Resources */,
+				6CBD1DA41E920698006D1BE4 /* wateringCan.png in Resources */,
 				6CBD1D891E91EE4E006D1BE4 /* Pumpkin_Stage_4.png in Resources */,
 				6CBD1D9A1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_4.png in Resources */,
 				6CBD1D9F1E91EE4E006D1BE4 /* Tulip_Stage_3.png in Resources */,
@@ -390,6 +409,7 @@
 				6CBD1D7D1E91EE4E006D1BE4 /* Melon_Stage_4.png in Resources */,
 				6CBD1D931E91EE4E006D1BE4 /* Sunflower_Stage_3.png in Resources */,
 				6CBD1D831E91EE4E006D1BE4 /* Potato_Stage_4.png in Resources */,
+				6CBD1DA81E920EE9006D1BE4 /* dryfloor.png in Resources */,
 				6CBD1D991E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_3.png in Resources */,
 				6CBD1D781E91EE4E006D1BE4 /* Cauliflower_Stage_5.png in Resources */,
 				6CBD1D941E91EE4E006D1BE4 /* Sunflower_Stage_4.png in Resources */,

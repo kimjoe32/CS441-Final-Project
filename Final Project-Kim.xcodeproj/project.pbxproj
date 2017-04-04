@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C4330BA1E934A75006C124E /* harvestInAction.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4330B91E934A75006C124E /* harvestInAction.png */; };
 		6CBD1D251E9188D7006D1BE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD1D241E9188D7006D1BE4 /* main.m */; };
 		6CBD1D281E9188D7006D1BE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD1D271E9188D7006D1BE4 /* AppDelegate.m */; };
 		6CBD1D2B1E9188D7006D1BE4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD1D2A1E9188D7006D1BE4 /* ViewController.m */; };
@@ -65,6 +66,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C4330B91E934A75006C124E /* harvestInAction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = harvestInAction.png; sourceTree = "<group>"; };
 		6CBD1D201E9188D7006D1BE4 /* Final Project-Kim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final Project-Kim.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CBD1D241E9188D7006D1BE4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6CBD1D261E9188D7006D1BE4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 		6CBD1DA21E920698006D1BE4 /* OtherPictures */ = {
 			isa = PBXGroup;
 			children = (
+				6C4330B91E934A75006C124E /* harvestInAction.png */,
 				6CBD1DA71E920EE9006D1BE4 /* dryfloor.png */,
 				6CBD1DA51E920DAD006D1BE4 /* harvest.png */,
 				6CBD1DA31E920698006D1BE4 /* wateringCan.png */,
@@ -366,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C4330BA1E934A75006C124E /* harvestInAction.png in Resources */,
 				6CBD1D971E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_1.png in Resources */,
 				6CBD1D951E91EE4E006D1BE4 /* Sunflower_Stage_5.png in Resources */,
 				6CBD1D811E91EE4E006D1BE4 /* Potato_Stage_2.png in Resources */,

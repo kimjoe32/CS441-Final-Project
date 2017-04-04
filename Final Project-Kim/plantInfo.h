@@ -23,6 +23,7 @@ typedef enum
 @property (nonatomic) NSInteger location;
 @property (nonatomic) plantTypes plantType;
 @property (nonatomic) NSInteger plantStage;
+@property (nonatomic) NSInteger price;
 
 - (void) water;
 - (void) plantCrop: (plantTypes) type;

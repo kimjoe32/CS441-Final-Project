@@ -13,9 +13,11 @@
 
 @property (nonatomic, retain) IBOutletCollection(UIButton) NSArray *plantButtons;
 @property (nonatomic, retain) IBOutletCollection(UIImageView) NSArray *groundImages;
-@property (strong, nonatomic) IBOutlet UICollectionView *groundCollectionView;
 @property (strong, nonatomic) IBOutlet UIButton *waterButton;
 @property (strong, nonatomic) IBOutlet UIButton *harvestButton;
+- (IBAction) harvestButton: (id) sender;
+- (IBAction) waterButton: (id) sender;
+- (IBAction) plantButton: (id) sender;
 
 @end
 

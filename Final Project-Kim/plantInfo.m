@@ -15,6 +15,7 @@
 @synthesize location;
 @synthesize plantType;
 @synthesize plantStage;
+@synthesize price;
 
 - (void) water
 {
@@ -24,10 +25,12 @@
 
 - (void) killPlant
 {
+    isPlanted = FALSE;
     growTime = 0;
     plantTime = 0;
     plantType = EMPTY;
     plantStage = 0;
+    price = 0;
 }
 
 - (void) plantCrop: (plantTypes) type
@@ -40,30 +43,39 @@
     switch(type)
     {
         case EMPTY:
+            price = 0;
             growTime = 0;
             
         case CAULIFLOWER:
+            price = 175;
             growTime += 1*60;
             
         case MELON:
+            price = 250;
             growTime += 1*60;
             
         case POTATO:
+            price = 80;
             growTime += 1*60;
             
         case PUMPKIN:
+            price = 320;
             growTime += 1*60;
             
         case RADISH:
+            price = 90;
             growTime += 2*60;
             
         case SUNFLOWER:
+            price = 80;
             growTime += 1*60;
             
         case SWEETGEMBERRY:
+            price = 3000;
             growTime += 1*60;
             
         case TULIP:
+            price = 30;
             growTime += 1*60;
     }
 }
@@ -75,6 +87,7 @@
     isPlanted = false;
     plantType = EMPTY;
     plantStage = 0;
+    price = 0;
 }
 
 - (UIImage*) upgrade
@@ -152,17 +165,23 @@
     [[NSUserDefaults standardUserDefaults] setBool:isPlanted
                                             forKey:[NSString stringWithFormat:@"isPlanted%ld", (long)location]];
     
-    [[NSUserDefaults standardUserDefaults] setObject:lastWatered
-                                              forKey:[NSString stringWithFormat:@"lastWatered%ld", (long)location]];
+    [[NSUserDefaults standardUserDefaults] setDouble:growTime
+                                              forKey:[NSString stringWithFormat:@"growTime%ld", (long)location]];
     
     [[NSUserDefaults standardUserDefaults] setObject:plantTime
                                               forKey:[NSString stringWithFormat:@"plantTime%ld", (long)location]];
     
-    [[NSUserDefaults standardUserDefaults] setDouble:growTime
-                                              forKey:[NSString stringWithFormat:@"growTime%ld", (long)location]];
+    [[NSUserDefaults standardUserDefaults] setObject:lastWatered
+                                              forKey:[NSString stringWithFormat:@"lastWatered%ld", (long)location]];
     
     [[NSUserDefaults standardUserDefaults] setInteger:plantType
                                                forKey:[NSString stringWithFormat:@"plantType%ld", (long)location]];
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:plantStage
+                                               forKey:[NSString stringWithFormat:@"plantStage%ld", (long)location]];
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:price
+                                               forKey:[NSString stringWithFormat:@"price%ld", (long)location]];
 }
 
 - (void) loadData
@@ -173,17 +192,23 @@
     isPlanted = [[NSUserDefaults standardUserDefaults] boolForKey:
                  [NSString stringWithFormat:@"isPlanted%ld", (long)location]];
     
-    lastWatered = [[NSUserDefaults standardUserDefaults] objectForKey:
-                   [NSString stringWithFormat:@"lastWatered%ld", (long)location]];
-    
+    growTime = [[NSUserDefaults standardUserDefaults] doubleForKey:
+                [NSString stringWithFormat:@"growTime%ld", (long)location]];
+
     plantTime = [[NSUserDefaults standardUserDefaults] objectForKey:
                  [NSString stringWithFormat:@"plantTime%ld", (long)location]];
     
-    growTime = [[NSUserDefaults standardUserDefaults] doubleForKey:
-                [NSString stringWithFormat:@"growTime%ld", (long)location]];
+    lastWatered = [[NSUserDefaults standardUserDefaults] objectForKey:
+                   [NSString stringWithFormat:@"lastWatered%ld", (long)location]];
     
     plantType = (int) [[NSUserDefaults standardUserDefaults] integerForKey:
                        [NSString stringWithFormat:@"plantType%ld", (long)location]];
+    
+    plantStage = (int) [[NSUserDefaults standardUserDefaults] integerForKey:
+                       [NSString stringWithFormat:@"plantStage%ld", (long)location]];
+    
+    price = (int) [[NSUserDefaults standardUserDefaults] integerForKey:
+                       [NSString stringWithFormat:@"price%ld", (long)location]];
 }
 
 - (UIImage*) upgradeCauliflower

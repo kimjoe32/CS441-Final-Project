@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6C4330BA1E934A75006C124E /* harvestInAction.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4330B91E934A75006C124E /* harvestInAction.png */; };
+		6C519EFB1E934EF90018A924 /* wateredFloor.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C519EF91E934EF90018A924 /* wateredFloor.png */; };
+		6C519EFC1E934EF90018A924 /* wateringInAction.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C519EFA1E934EF90018A924 /* wateringInAction.png */; };
+		6CADC70C1EAA70D400001FED /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC70B1EAA70D400001FED /* StoreViewController.m */; };
 		6CBD1D251E9188D7006D1BE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD1D241E9188D7006D1BE4 /* main.m */; };
 		6CBD1D281E9188D7006D1BE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD1D271E9188D7006D1BE4 /* AppDelegate.m */; };
 		6CBD1D2B1E9188D7006D1BE4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD1D2A1E9188D7006D1BE4 /* ViewController.m */; };
@@ -67,6 +70,10 @@
 
 /* Begin PBXFileReference section */
 		6C4330B91E934A75006C124E /* harvestInAction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = harvestInAction.png; sourceTree = "<group>"; };
+		6C519EF91E934EF90018A924 /* wateredFloor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wateredFloor.png; sourceTree = "<group>"; };
+		6C519EFA1E934EF90018A924 /* wateringInAction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wateringInAction.png; sourceTree = "<group>"; };
+		6CADC70B1EAA70D400001FED /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
+		6CADC70D1EAA70E100001FED /* StoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
 		6CBD1D201E9188D7006D1BE4 /* Final Project-Kim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final Project-Kim.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CBD1D241E9188D7006D1BE4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6CBD1D261E9188D7006D1BE4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -166,6 +173,8 @@
 				6CBD1D3A1E91B177006D1BE4 /* plantInfo.h */,
 				6CBD1D3B1E91B1A3006D1BE4 /* plantInfo.m */,
 				6CBD1D2C1E9188D7006D1BE4 /* Main.storyboard */,
+				6CADC70D1EAA70E100001FED /* StoreViewController.h */,
+				6CADC70B1EAA70D400001FED /* StoreViewController.m */,
 				6CBD1D2F1E9188D7006D1BE4 /* Assets.xcassets */,
 				6CBD1D311E9188D7006D1BE4 /* LaunchScreen.storyboard */,
 				6CBD1D341E9188D7006D1BE4 /* Info.plist */,
@@ -303,6 +312,8 @@
 		6CBD1DA21E920698006D1BE4 /* OtherPictures */ = {
 			isa = PBXGroup;
 			children = (
+				6C519EF91E934EF90018A924 /* wateredFloor.png */,
+				6C519EFA1E934EF90018A924 /* wateringInAction.png */,
 				6C4330B91E934A75006C124E /* harvestInAction.png */,
 				6CBD1DA71E920EE9006D1BE4 /* dryfloor.png */,
 				6CBD1DA51E920DAD006D1BE4 /* harvest.png */,
@@ -372,6 +383,7 @@
 				6C4330BA1E934A75006C124E /* harvestInAction.png in Resources */,
 				6CBD1D971E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_1.png in Resources */,
 				6CBD1D951E91EE4E006D1BE4 /* Sunflower_Stage_5.png in Resources */,
+				6C519EFC1E934EF90018A924 /* wateringInAction.png in Resources */,
 				6CBD1D811E91EE4E006D1BE4 /* Potato_Stage_2.png in Resources */,
 				6CBD1DA11E91EE4E006D1BE4 /* Tulip_Stage_5.png in Resources */,
 				6CBD1D851E91EE4E006D1BE4 /* Potato_Stage_6.png in Resources */,
@@ -382,6 +394,7 @@
 				6CBD1D921E91EE4E006D1BE4 /* Sunflower_Stage_2.png in Resources */,
 				6CBD1DA01E91EE4E006D1BE4 /* Tulip_Stage_4.png in Resources */,
 				6CBD1D7C1E91EE4E006D1BE4 /* Melon_Stage_3.png in Resources */,
+				6C519EFB1E934EF90018A924 /* wateredFloor.png in Resources */,
 				6CBD1D331E9188D7006D1BE4 /* LaunchScreen.storyboard in Resources */,
 				6CBD1DA41E920698006D1BE4 /* wateringCan.png in Resources */,
 				6CBD1D891E91EE4E006D1BE4 /* Pumpkin_Stage_4.png in Resources */,
@@ -435,6 +448,7 @@
 				6CBD1D281E9188D7006D1BE4 /* AppDelegate.m in Sources */,
 				6CBD1D251E9188D7006D1BE4 /* main.m in Sources */,
 				6CBD1D3C1E91B1A3006D1BE4 /* plantInfo.m in Sources */,
+				6CADC70C1EAA70D400001FED /* StoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

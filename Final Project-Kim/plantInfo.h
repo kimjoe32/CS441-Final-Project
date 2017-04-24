@@ -12,7 +12,7 @@
 
 typedef enum
 {
-    EMPTY, CAULIFLOWER, MELON, POTATO, PUMPKIN, RADISH, SUNFLOWER, SWEETGEMBERRY, TULIP
+    EMPTY, CAULIFLOWER, MELON, POTATO, PUMPKIN, RADISH, SUNFLOWER, SWEETGEMBERRY, TULIP, plantTypeCount
 } plantTypes;
 
 @property (nonatomic) BOOL isWatered;
@@ -20,10 +20,12 @@ typedef enum
 @property (nonatomic) NSDate* plantTime;
 @property (nonatomic) NSDate* lastWatered;
 @property (nonatomic) NSTimeInterval growTime;
+@property (nonatomic) NSTimeInterval totalGrowTime;
 @property (nonatomic) NSInteger location;
 @property (nonatomic) plantTypes plantType;
 @property (nonatomic) NSInteger plantStage;
-@property (nonatomic) NSInteger price;
+@property (nonatomic) NSInteger sellPrice;
+@property (nonatomic) NSInteger buyPrice;
 
 - (void) water;
 - (void) plantCrop: (plantTypes) type;
@@ -31,7 +33,11 @@ typedef enum
 - (BOOL) canHarvest;
 - (void) saveData;
 - (void) loadData;
+- (double) remainingGrowTime;
 - (void) killPlant;
+- (NSMutableArray*) getAllPlants;
+- (UIImage*) getImageForType;
+- (NSString*) getPlantTypeString;
 - (UIImage*) upgrade;
 - (UIImage*) upgradeCauliflower;
 - (UIImage*) upgradeMelon;

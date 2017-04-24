@@ -17,7 +17,33 @@ BOOL harvestingMode;
 NSInteger  money;
 @implementation ViewController
 
-- (void)viewDidLoad {
++(UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder
+{
+    UIViewController * myViewController =
+    [[ViewController alloc]
+     initWithNibName:@"view"
+     bundle:nil];
+    
+    return myViewController;
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    NSLog(@"viewWillDisappear");
+    [super viewWillDisappear:animated];
+    
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    NSLog(@"viewWillAppear");
+    [super viewWillAppear:animated];
+    
+}
+
+- (void)viewDidLoad
+{
+    NSLog(@"viewdidload");
     for (NSInteger i =0; i < [_plantButtons count]; i++)
     {
         plantInfo * pi = [plantInfo alloc];
@@ -38,11 +64,12 @@ NSInteger  money;
     money = 500;
     wateringMode = FALSE;
     harvestingMode = FALSE;
-    NSLog(@"viewdidload");
 }
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder
 {   //save states
+    NSLog(@"encoding");
+    
     for (UIButton *b in _plantButtons)
     {
         [coder encodeObject:[b imageForState:UIControlStateNormal] forKey:b.restorationIdentifier];
@@ -64,6 +91,7 @@ NSInteger  money;
 
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder
 {   //restore states
+    NSLog(@"decoding");
     for (UIButton *b in _plantButtons)
     {
         [b setImage: [coder decodeObjectForKey:b.restorationIdentifier]
@@ -98,7 +126,7 @@ NSInteger  money;
         {
             [pi harvest];
             [btn setImage:nil forState:UIControlStateNormal];
-            money += [pi price];
+            money += [pi sellPrice];
             [pi killPlant];
         }
     }
@@ -107,10 +135,32 @@ NSInteger  money;
         [pi water];
         [img setImage:[UIImage imageNamed:@"wateredFloor.png"]];
     }
-    else //get + print plant info - TODO
-    {
-        return;
+    else
+    {   //get + print plant info
+        plantInfo * pi =[plantInfoArray objectAtIndex:location];
+        if ( ![pi isPlanted])
+        {   //nothing is planted
+            [self setPlantInfoPaneToEmpty];
+        }
+        else
+        {
+            [self setPlantInfoPane:pi];
+        }
     }
+}
+
+- (void) setPlantInfoPaneToEmpty
+{
+    [_cropNameLabel setText:@"N/A"];
+    [_cropSellPriceLabel setText:@"0"];
+    [_cropTimeRemainingLabel setText:@"0"];
+}
+
+- (void) setPlantInfoPane: (plantInfo*) pi
+{
+    [_cropNameLabel setText:[pi getPlantTypeString]];
+    [_cropSellPriceLabel setText:[NSString stringWithFormat:@"%ld", [pi sellPrice]]];
+    [_cropTimeRemainingLabel setText:[NSString stringWithFormat:@"%f", [pi remainingGrowTime]]];
 }
 
 - (IBAction) waterButton: (id) sender
@@ -139,7 +189,7 @@ NSInteger  money;
         [_waterButton setEnabled: FALSE];
         harvestingMode = TRUE;
         wateringMode = FALSE;
-        [_harvestButton setImage:[UIImage imageNamed:@"harvesInAction.png"] forState:UIControlStateNormal];
+        [_harvestButton setImage:[UIImage imageNamed:@"harvestInAction.png"] forState:UIControlStateNormal];
     }
     else //turn off harvesting mode
     {
@@ -148,13 +198,21 @@ NSInteger  money;
         harvestingMode = FALSE;
         wateringMode = FALSE;
     }
-    
+}
+
+- (IBAction) tapAnywhereElse:(id)sender
+{
+    wateringMode = FALSE;
+    harvestingMode = FALSE;
+    [self setPlantInfoPaneToEmpty];
+    [_waterButton setEnabled: TRUE];
+    [_harvestButton setEnabled: TRUE];
+    [_harvestButton setImage:[UIImage imageNamed:@"harvest.png"] forState:UIControlStateNormal];
+    [_waterButton setImage:[UIImage imageNamed:@"wateringCan.png"] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 @end

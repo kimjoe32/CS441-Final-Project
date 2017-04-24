@@ -15,7 +15,9 @@
 @synthesize location;
 @synthesize plantType;
 @synthesize plantStage;
-@synthesize price;
+@synthesize sellPrice;
+@synthesize buyPrice;
+@synthesize totalGrowTime;
 
 - (void) water
 {
@@ -30,7 +32,87 @@
     plantTime = 0;
     plantType = EMPTY;
     plantStage = 0;
-    price = 0;
+    sellPrice = 0;
+    buyPrice = 0;
+    totalGrowTime = 0;
+}
+
+- (NSMutableArray*) getAllPlants
+{
+    NSMutableArray * allPlantsArr = [[NSMutableArray alloc] init];
+    for (int i =1; i < plantTypeCount; i++)
+    {
+        plantInfo * pi = [plantInfo alloc];
+        [pi plantCrop:(plantTypes) i];
+        [allPlantsArr addObject:pi];
+    }
+    return allPlantsArr;
+}
+
+- (UIImage*) getImageForType
+{
+    switch(plantType)
+    {
+        default:
+            return nil;
+            
+        case CAULIFLOWER:
+            return [UIImage imageNamed: @"Cauliflower_Stage_6.png"];
+            
+        case MELON:
+            return [UIImage imageNamed:@"Melon_Stage_6.png"];
+            
+        case POTATO:
+            return [UIImage imageNamed:@"Potato_Stage_6.png"];
+            
+        case PUMPKIN:
+            return [UIImage imageNamed:@"Pumpkin_Stage_6.png"];
+            
+        case RADISH:
+            return [UIImage imageNamed:@"Radish_Stage_5.png"];
+            
+        case SUNFLOWER:
+            return [UIImage imageNamed:@"Sunflower_Stage_5.png"];
+            
+        case SWEETGEMBERRY:
+            return [UIImage imageNamed:@"Sweet_Gem_Berry_Stage_6"];
+            
+        case TULIP:
+            return [UIImage imageNamed:@"Tulip_Stage_5.png"];
+    }
+}
+
+- (NSString*) getPlantTypeString
+{
+    switch(plantType)
+    {
+        default:
+            return @"Empty";
+            
+        case CAULIFLOWER:
+            return @"Cauliflower";
+        
+        case MELON:
+            return @"Melon";
+            
+        case POTATO:
+            return @"Potato";
+            
+        case PUMPKIN:
+            return @"Pumpkin";
+            
+        case RADISH:
+            return @"Radish";
+            
+        case SUNFLOWER:
+            return @"Sunflower";
+            
+        case SWEETGEMBERRY:
+            return @"Sweet Gem Berry";
+            
+        case TULIP:
+            return @"Tulip";
+    }
 }
 
 - (void) plantCrop: (plantTypes) type
@@ -42,42 +124,65 @@
     
     switch(type)
     {
-        case EMPTY:
-            price = 0;
+        default: EMPTY:
+            sellPrice = 0;
+            buyPrice = 0;
             growTime = 0;
+            totalGrowTime = 0;
             
         case CAULIFLOWER:
-            price = 175;
+            sellPrice = 175;
+            buyPrice = 0;
             growTime += 1*60;
+            totalGrowTime = 12*60;
             
         case MELON:
-            price = 250;
+            sellPrice = 250;
+            buyPrice = 0;
             growTime += 1*60;
+            totalGrowTime = 12*60;
             
         case POTATO:
-            price = 80;
+            sellPrice = 80;
+            buyPrice = 0;
             growTime += 1*60;
+            totalGrowTime = 6*60;
             
         case PUMPKIN:
-            price = 320;
+            sellPrice = 320;
+            buyPrice = 0;
             growTime += 1*60;
+            totalGrowTime = 13*60;
             
         case RADISH:
-            price = 90;
+            sellPrice = 90;
+            buyPrice = 0;
             growTime += 2*60;
+            totalGrowTime = 6*60;
             
         case SUNFLOWER:
-            price = 80;
+            sellPrice = 80;
+            buyPrice = 0;
             growTime += 1*60;
+            totalGrowTime = 8*60;
             
         case SWEETGEMBERRY:
-            price = 3000;
+            sellPrice = 3000;
+            buyPrice = 0;
             growTime += 1*60;
+            totalGrowTime = 24*60;
             
         case TULIP:
-            price = 30;
+            sellPrice = 30;
+            buyPrice = 0;
             growTime += 1*60;
+            totalGrowTime = 6*60;
     }
+}
+
+- (double) remainingGrowTime
+{
+    return totalGrowTime - growTime;
 }
 
 - (void) harvest
@@ -87,7 +192,9 @@
     isPlanted = false;
     plantType = EMPTY;
     plantStage = 0;
-    price = 0;
+    sellPrice = 0;
+    buyPrice = 0;
+    totalGrowTime = 0;
 }
 
 - (UIImage*) upgrade
@@ -95,8 +202,9 @@
     plantStage++;
     switch(plantType)
     {
-        case EMPTY:
+        default:
             return nil;
+            
         case CAULIFLOWER:
             return [self upgradeCauliflower];
             
@@ -127,7 +235,7 @@
 {
     switch (plantType)
     {
-        case EMPTY:
+        default:
             return FALSE;
             
         case CAULIFLOWER:
@@ -168,6 +276,9 @@
     [[NSUserDefaults standardUserDefaults] setDouble:growTime
                                               forKey:[NSString stringWithFormat:@"growTime%ld", (long)location]];
     
+    [[NSUserDefaults standardUserDefaults] setDouble:totalGrowTime
+                                              forKey:[NSString stringWithFormat:@"totalGrowTime%ld", (long)location]];
+    
     [[NSUserDefaults standardUserDefaults] setObject:plantTime
                                               forKey:[NSString stringWithFormat:@"plantTime%ld", (long)location]];
     
@@ -180,8 +291,11 @@
     [[NSUserDefaults standardUserDefaults] setInteger:plantStage
                                                forKey:[NSString stringWithFormat:@"plantStage%ld", (long)location]];
     
-    [[NSUserDefaults standardUserDefaults] setInteger:price
-                                               forKey:[NSString stringWithFormat:@"price%ld", (long)location]];
+    [[NSUserDefaults standardUserDefaults] setInteger:sellPrice
+                                               forKey:[NSString stringWithFormat:@"sellPrice%ld", (long)location]];
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:buyPrice
+                                               forKey:[NSString stringWithFormat:@"buyPrice%ld", (long)location]];
 }
 
 - (void) loadData
@@ -194,6 +308,9 @@
     
     growTime = [[NSUserDefaults standardUserDefaults] doubleForKey:
                 [NSString stringWithFormat:@"growTime%ld", (long)location]];
+    
+    totalGrowTime = [[NSUserDefaults standardUserDefaults] doubleForKey:
+                [NSString stringWithFormat:@"totalGrowTime%ld", (long)location]];
 
     plantTime = [[NSUserDefaults standardUserDefaults] objectForKey:
                  [NSString stringWithFormat:@"plantTime%ld", (long)location]];
@@ -207,8 +324,11 @@
     plantStage = (int) [[NSUserDefaults standardUserDefaults] integerForKey:
                        [NSString stringWithFormat:@"plantStage%ld", (long)location]];
     
-    price = (int) [[NSUserDefaults standardUserDefaults] integerForKey:
-                       [NSString stringWithFormat:@"price%ld", (long)location]];
+    sellPrice = (int) [[NSUserDefaults standardUserDefaults] integerForKey:
+                       [NSString stringWithFormat:@"sellPrice%ld", (long)location]];
+    
+    buyPrice = (int) [[NSUserDefaults standardUserDefaults] integerForKey:
+                       [NSString stringWithFormat:@"buyPrice%ld", (long)location]];
 }
 
 - (UIImage*) upgradeCauliflower

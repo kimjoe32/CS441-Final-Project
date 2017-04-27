@@ -13,13 +13,16 @@
     NSArray *tableDataArray;
 }
 @end
-
+AppDelegate * appdel;
 @implementation StoreViewController
 
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    appdel = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     tableDataArray = [[[plantInfo alloc] getAllPlants] copy];
+    //load money
+    [_moneyLabel setText:[NSString stringWithFormat:@"%ld", appdel.money]];
 }
 
 

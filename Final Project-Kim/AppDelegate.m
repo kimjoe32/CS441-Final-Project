@@ -13,6 +13,7 @@
 @end
 
 @implementation AppDelegate
+@synthesize money;
 -(BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
 {
     return YES;
@@ -22,7 +23,8 @@
 {
     return YES;
 }
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     return YES;
 }

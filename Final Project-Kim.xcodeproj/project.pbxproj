@@ -10,6 +10,11 @@
 		6C4330BA1E934A75006C124E /* harvestInAction.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4330B91E934A75006C124E /* harvestInAction.png */; };
 		6C519EFB1E934EF90018A924 /* wateredFloor.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C519EF91E934EF90018A924 /* wateredFloor.png */; };
 		6C519EFC1E934EF90018A924 /* wateringInAction.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C519EFA1E934EF90018A924 /* wateringInAction.png */; };
+		6C5BCEB41EB12418004A0777 /* farmIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5BCEB21EB12418004A0777 /* farmIcon.png */; };
+		6C5BCEB51EB12418004A0777 /* storeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5BCEB31EB12418004A0777 /* storeIcon.png */; };
+		6C5BCEB91EB13EB6004A0777 /* dryfloor.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5BCEB71EB13EB6004A0777 /* dryfloor.png */; };
+		6C5BCEBA1EB13EB6004A0777 /* wateredFloor.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5BCEB81EB13EB6004A0777 /* wateredFloor.png */; };
+		6C5BCEBC1EB1401B004A0777 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5BCEBB1EB1401B004A0777 /* coin.png */; };
 		6CADC70C1EAA70D400001FED /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC70B1EAA70D400001FED /* StoreViewController.m */; };
 		6CBD1D251E9188D7006D1BE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD1D241E9188D7006D1BE4 /* main.m */; };
 		6CBD1D281E9188D7006D1BE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD1D271E9188D7006D1BE4 /* AppDelegate.m */; };
@@ -72,6 +77,11 @@
 		6C4330B91E934A75006C124E /* harvestInAction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = harvestInAction.png; sourceTree = "<group>"; };
 		6C519EF91E934EF90018A924 /* wateredFloor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wateredFloor.png; sourceTree = "<group>"; };
 		6C519EFA1E934EF90018A924 /* wateringInAction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wateringInAction.png; sourceTree = "<group>"; };
+		6C5BCEB21EB12418004A0777 /* farmIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = farmIcon.png; sourceTree = "<group>"; };
+		6C5BCEB31EB12418004A0777 /* storeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storeIcon.png; sourceTree = "<group>"; };
+		6C5BCEB71EB13EB6004A0777 /* dryfloor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dryfloor.png; sourceTree = "<group>"; };
+		6C5BCEB81EB13EB6004A0777 /* wateredFloor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wateredFloor.png; sourceTree = "<group>"; };
+		6C5BCEBB1EB1401B004A0777 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = coin.png; path = ../coin.png; sourceTree = "<group>"; };
 		6CADC70B1EAA70D400001FED /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		6CADC70D1EAA70E100001FED /* StoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
 		6CBD1D201E9188D7006D1BE4 /* Final Project-Kim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final Project-Kim.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +157,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C5BCEB61EB13EB6004A0777 /* groundPictures */ = {
+			isa = PBXGroup;
+			children = (
+				6C5BCEB71EB13EB6004A0777 /* dryfloor.png */,
+				6C5BCEB81EB13EB6004A0777 /* wateredFloor.png */,
+			);
+			path = groundPictures;
+			sourceTree = "<group>";
+		};
 		6CBD1D171E9188D7006D1BE4 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +192,7 @@
 				6CBD1D3A1E91B177006D1BE4 /* plantInfo.h */,
 				6CBD1D3B1E91B1A3006D1BE4 /* plantInfo.m */,
 				6CBD1D2C1E9188D7006D1BE4 /* Main.storyboard */,
+				6C5BCEB61EB13EB6004A0777 /* groundPictures */,
 				6CADC70D1EAA70E100001FED /* StoreViewController.h */,
 				6CADC70B1EAA70D400001FED /* StoreViewController.m */,
 				6CBD1D2F1E9188D7006D1BE4 /* Assets.xcassets */,
@@ -312,6 +332,9 @@
 		6CBD1DA21E920698006D1BE4 /* OtherPictures */ = {
 			isa = PBXGroup;
 			children = (
+				6C5BCEBB1EB1401B004A0777 /* coin.png */,
+				6C5BCEB21EB12418004A0777 /* farmIcon.png */,
+				6C5BCEB31EB12418004A0777 /* storeIcon.png */,
 				6C519EF91E934EF90018A924 /* wateredFloor.png */,
 				6C519EFA1E934EF90018A924 /* wateringInAction.png */,
 				6C4330B91E934A75006C124E /* harvestInAction.png */,
@@ -394,6 +417,7 @@
 				6CBD1D921E91EE4E006D1BE4 /* Sunflower_Stage_2.png in Resources */,
 				6CBD1DA01E91EE4E006D1BE4 /* Tulip_Stage_4.png in Resources */,
 				6CBD1D7C1E91EE4E006D1BE4 /* Melon_Stage_3.png in Resources */,
+				6C5BCEB41EB12418004A0777 /* farmIcon.png in Resources */,
 				6C519EFB1E934EF90018A924 /* wateredFloor.png in Resources */,
 				6CBD1D331E9188D7006D1BE4 /* LaunchScreen.storyboard in Resources */,
 				6CBD1DA41E920698006D1BE4 /* wateringCan.png in Resources */,
@@ -401,9 +425,12 @@
 				6CBD1D9A1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_4.png in Resources */,
 				6CBD1D9F1E91EE4E006D1BE4 /* Tulip_Stage_3.png in Resources */,
 				6CBD1D7B1E91EE4E006D1BE4 /* Melon_Stage_2.png in Resources */,
+				6C5BCEB51EB12418004A0777 /* storeIcon.png in Resources */,
 				6CBD1D901E91EE4E006D1BE4 /* Radish_Stage_5.png in Resources */,
 				6CBD1D871E91EE4E006D1BE4 /* Pumpkin_Stage_2.png in Resources */,
+				6C5BCEBA1EB13EB6004A0777 /* wateredFloor.png in Resources */,
 				6CBD1D791E91EE4E006D1BE4 /* Cauliflower_Stage_6.png in Resources */,
+				6C5BCEBC1EB1401B004A0777 /* coin.png in Resources */,
 				6CBD1D981E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_2.png in Resources */,
 				6CBD1D8F1E91EE4E006D1BE4 /* Radish_Stage_4.png in Resources */,
 				6CBD1D751E91EE4E006D1BE4 /* Cauliflower_Stage_2.png in Resources */,
@@ -415,6 +442,7 @@
 				6CBD1D741E91EE4E006D1BE4 /* Cauliflower_Stage_1.png in Resources */,
 				6CBD1D7F1E91EE4E006D1BE4 /* Melon_Stage_6.png in Resources */,
 				6CBD1D771E91EE4E006D1BE4 /* Cauliflower_Stage_4.png in Resources */,
+				6C5BCEB91EB13EB6004A0777 /* dryfloor.png in Resources */,
 				6CBD1D9B1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_5.png in Resources */,
 				6CBD1D761E91EE4E006D1BE4 /* Cauliflower_Stage_3.png in Resources */,
 				6CBD1D861E91EE4E006D1BE4 /* Pumpkin_Stage_1.png in Resources */,

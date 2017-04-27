@@ -14,36 +14,14 @@
 NSMutableArray * plantInfoArray;
 BOOL wateringMode;
 BOOL harvestingMode;
-NSInteger  money;
+AppDelegate * appd;
 @implementation ViewController
-
-+(UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder
-{
-    UIViewController * myViewController =
-    [[ViewController alloc]
-     initWithNibName:@"view"
-     bundle:nil];
-    
-    return myViewController;
-}
-
-- (void) viewWillDisappear:(BOOL)animated
-{
-    NSLog(@"viewWillDisappear");
-    [super viewWillDisappear:animated];
-    
-}
-
-- (void) viewWillAppear:(BOOL)animated
-{
-    NSLog(@"viewWillAppear");
-    [super viewWillAppear:animated];
-    
-}
 
 - (void)viewDidLoad
 {
     NSLog(@"viewdidload");
+
+    appd = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     for (NSInteger i =0; i < [_plantButtons count]; i++)
     {
         plantInfo * pi = [plantInfo alloc];
@@ -57,11 +35,12 @@ NSInteger  money;
     
     for (UIImageView * img in _groundImages)
     {
-        //set image
+        //set image of ground patches
         [img setImage:[UIImage imageNamed:@"dryFloor.png"]];
     }
     
-    money = 500;
+    appd.money = 500;
+    [_moneyLabel setText:[NSString stringWithFormat:@"%ld", appd.money]];
     wateringMode = FALSE;
     harvestingMode = FALSE;
 }
@@ -69,10 +48,12 @@ NSInteger  money;
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder
 {   //save states
     NSLog(@"encoding");
+    [super encodeRestorableStateWithCoder:coder];
     
     for (UIButton *b in _plantButtons)
     {
-        [coder encodeObject:[b imageForState:UIControlStateNormal] forKey:b.restorationIdentifier];
+        [coder encodeObject:UIImagePNGRepresentation([b imageForState:UIControlStateNormal])
+                     forKey:b.restorationIdentifier];
     }
     
     for (plantInfo * pi in plantInfoArray)
@@ -82,19 +63,20 @@ NSInteger  money;
     
     for (UIImageView * img in _groundImages)
     {
-        [coder encodeObject:img.image forKey:img.restorationIdentifier];
+        [coder encodeObject:UIImagePNGRepresentation(img.image) forKey:img.restorationIdentifier];
     }
     
-    [[NSUserDefaults standardUserDefaults] setInteger:money forKey:@"money"];
-    [super encodeRestorableStateWithCoder:coder];
+    [[NSUserDefaults standardUserDefaults] setInteger:appd.money forKey:@"money"];
 }
 
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder
 {   //restore states
     NSLog(@"decoding");
+    
+    [super decodeRestorableStateWithCoder:coder];
     for (UIButton *b in _plantButtons)
     {
-        [b setImage: [coder decodeObjectForKey:b.restorationIdentifier]
+        [b setImage: [UIImage imageWithData:[coder decodeObjectForKey:b.restorationIdentifier]]
            forState:UIControlStateNormal];
     }
     
@@ -105,13 +87,14 @@ NSInteger  money;
     
     for (UIImageView * img in _groundImages)
     {
-        [img setImage: [coder decodeObjectForKey:img.restorationIdentifier]];
+        [img setImage: [UIImage imageWithData:[coder decodeObjectForKey:img.restorationIdentifier]]];
+        NSLog(@"restID =  %@", img.restorationIdentifier);
     }
     
-    money = [[NSUserDefaults standardUserDefaults] integerForKey:
+    appd.money = [[NSUserDefaults standardUserDefaults] integerForKey:
                  [NSString stringWithFormat:@"money"]];
     
-    [super decodeRestorableStateWithCoder:coder];
+    [_moneyLabel setText:[NSString stringWithFormat:@"%ld", appd.money]];
 }
 
 - (IBAction) plantButton: (id) sender
@@ -126,7 +109,9 @@ NSInteger  money;
         {
             [pi harvest];
             [btn setImage:nil forState:UIControlStateNormal];
-            money += [pi sellPrice];
+            appd.money += [pi sellPrice];
+            
+            [_moneyLabel setText:[NSString stringWithFormat:@"%ld", appd.money]];
             [pi killPlant];
         }
     }

@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "plantInfo.h"
+#import "AppDelegate.h"
 
 @interface StoreViewController : UIViewController <UITableViewDelegate>
-@property (strong, nonatomic) IBOutlet UIButton *backButton;
 @property (strong, nonatomic) IBOutlet UITableView *plantsListTableView;
 @property (strong, nonatomic) IBOutlet UILabel *moneyLabel;
 @end

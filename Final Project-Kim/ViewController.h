@@ -19,13 +19,14 @@
 @property (strong, nonatomic) IBOutlet UILabel *cropNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *cropSellPriceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *cropTimeRemainingLabel;
-//@property (weak, nonatomic) IBOutlet UITabBar *tabBar;
+@property (nonatomic) plantTypes * plantToSow;
 @property (strong, nonatomic) IBOutlet UILabel *moneyLabel;
 
 - (IBAction) harvestButton: (id) sender;
 - (IBAction) waterButton: (id) sender;
 - (IBAction) plantButton: (id) sender;
 - (IBAction) tapAnywhereElse:(id)sender;
+- (IBAction) backpackButton:(id)sender;
 
 
 @end

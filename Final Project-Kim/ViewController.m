@@ -88,7 +88,7 @@ AppDelegate * appd;
     for (UIImageView * img in _groundImages)
     {
         [img setImage: [UIImage imageWithData:[coder decodeObjectForKey:img.restorationIdentifier]]];
-        NSLog(@"restID =  %@", img.restorationIdentifier);
+//        NSLog(@"restID =  %@", img.restorationIdentifier);
     }
     
     appd.money = [[NSUserDefaults standardUserDefaults] integerForKey:
@@ -146,6 +146,11 @@ AppDelegate * appd;
     [_cropNameLabel setText:[pi getPlantTypeString]];
     [_cropSellPriceLabel setText:[NSString stringWithFormat:@"%ld", [pi sellPrice]]];
     [_cropTimeRemainingLabel setText:[NSString stringWithFormat:@"%f", [pi remainingGrowTime]]];
+}
+
+- (IBAction) backpackButton: (id)sender
+{
+    
 }
 
 - (IBAction) waterButton: (id) sender

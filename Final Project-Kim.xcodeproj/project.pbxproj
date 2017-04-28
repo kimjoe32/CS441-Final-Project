@@ -14,7 +14,11 @@
 		6C5BCEB51EB12418004A0777 /* storeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5BCEB31EB12418004A0777 /* storeIcon.png */; };
 		6C5BCEB91EB13EB6004A0777 /* dryfloor.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5BCEB71EB13EB6004A0777 /* dryfloor.png */; };
 		6C5BCEBA1EB13EB6004A0777 /* wateredFloor.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5BCEB81EB13EB6004A0777 /* wateredFloor.png */; };
-		6C5BCEBC1EB1401B004A0777 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5BCEBB1EB1401B004A0777 /* coin.png */; };
+		6C6BAC361EB383D80047FBE6 /* bagItemTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BAC351EB383D80047FBE6 /* bagItemTemplate.m */; };
+		6C6BAC3C1EB3905E0047FBE6 /* bagItemTemplate.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C6BAC3B1EB3905E0047FBE6 /* bagItemTemplate.xib */; };
+		6C6BAC7E1EB398280047FBE6 /* backpack.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C6BAC7D1EB398280047FBE6 /* backpack.png */; };
+		6C6BAC801EB3ADEF0047FBE6 /* cropinfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C6BAC7F1EB3ADEF0047FBE6 /* cropinfo.png */; };
+		6C6BAC821EB3B20E0047FBE6 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C6BAC811EB3B20E0047FBE6 /* coin.png */; };
 		6CADC70C1EAA70D400001FED /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CADC70B1EAA70D400001FED /* StoreViewController.m */; };
 		6CBD1D251E9188D7006D1BE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD1D241E9188D7006D1BE4 /* main.m */; };
 		6CBD1D281E9188D7006D1BE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD1D271E9188D7006D1BE4 /* AppDelegate.m */; };
@@ -81,7 +85,12 @@
 		6C5BCEB31EB12418004A0777 /* storeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storeIcon.png; sourceTree = "<group>"; };
 		6C5BCEB71EB13EB6004A0777 /* dryfloor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dryfloor.png; sourceTree = "<group>"; };
 		6C5BCEB81EB13EB6004A0777 /* wateredFloor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wateredFloor.png; sourceTree = "<group>"; };
-		6C5BCEBB1EB1401B004A0777 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = coin.png; path = ../coin.png; sourceTree = "<group>"; };
+		6C6BAC341EB383BF0047FBE6 /* bagItemTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bagItemTemplate.h; sourceTree = "<group>"; };
+		6C6BAC351EB383D80047FBE6 /* bagItemTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bagItemTemplate.m; sourceTree = "<group>"; };
+		6C6BAC3B1EB3905E0047FBE6 /* bagItemTemplate.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = bagItemTemplate.xib; sourceTree = "<group>"; };
+		6C6BAC7D1EB398280047FBE6 /* backpack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backpack.png; path = ../../backpack.png; sourceTree = "<group>"; };
+		6C6BAC7F1EB3ADEF0047FBE6 /* cropinfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cropinfo.png; path = OtherPictures/cropinfo.png; sourceTree = "<group>"; };
+		6C6BAC811EB3B20E0047FBE6 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
 		6CADC70B1EAA70D400001FED /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		6CADC70D1EAA70E100001FED /* StoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
 		6CBD1D201E9188D7006D1BE4 /* Final Project-Kim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final Project-Kim.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +178,7 @@
 		6CBD1D171E9188D7006D1BE4 = {
 			isa = PBXGroup;
 			children = (
+				6C6BAC811EB3B20E0047FBE6 /* coin.png */,
 				6CBD1D221E9188D7006D1BE4 /* Final Project-Kim */,
 				6CBD1D211E9188D7006D1BE4 /* Products */,
 			);
@@ -189,9 +199,13 @@
 				6CBD1D271E9188D7006D1BE4 /* AppDelegate.m */,
 				6CBD1D291E9188D7006D1BE4 /* ViewController.h */,
 				6CBD1D2A1E9188D7006D1BE4 /* ViewController.m */,
+				6C6BAC341EB383BF0047FBE6 /* bagItemTemplate.h */,
+				6C6BAC3B1EB3905E0047FBE6 /* bagItemTemplate.xib */,
+				6C6BAC351EB383D80047FBE6 /* bagItemTemplate.m */,
 				6CBD1D3A1E91B177006D1BE4 /* plantInfo.h */,
 				6CBD1D3B1E91B1A3006D1BE4 /* plantInfo.m */,
 				6CBD1D2C1E9188D7006D1BE4 /* Main.storyboard */,
+				6C6BAC7F1EB3ADEF0047FBE6 /* cropinfo.png */,
 				6C5BCEB61EB13EB6004A0777 /* groundPictures */,
 				6CADC70D1EAA70E100001FED /* StoreViewController.h */,
 				6CADC70B1EAA70D400001FED /* StoreViewController.m */,
@@ -332,7 +346,7 @@
 		6CBD1DA21E920698006D1BE4 /* OtherPictures */ = {
 			isa = PBXGroup;
 			children = (
-				6C5BCEBB1EB1401B004A0777 /* coin.png */,
+				6C6BAC7D1EB398280047FBE6 /* backpack.png */,
 				6C5BCEB21EB12418004A0777 /* farmIcon.png */,
 				6C5BCEB31EB12418004A0777 /* storeIcon.png */,
 				6C519EF91E934EF90018A924 /* wateredFloor.png */,
@@ -410,6 +424,7 @@
 				6CBD1D811E91EE4E006D1BE4 /* Potato_Stage_2.png in Resources */,
 				6CBD1DA11E91EE4E006D1BE4 /* Tulip_Stage_5.png in Resources */,
 				6CBD1D851E91EE4E006D1BE4 /* Potato_Stage_6.png in Resources */,
+				6C6BAC3C1EB3905E0047FBE6 /* bagItemTemplate.xib in Resources */,
 				6CBD1DA61E920DAD006D1BE4 /* harvest.png in Resources */,
 				6CBD1D7E1E91EE4E006D1BE4 /* Melon_Stage_5.png in Resources */,
 				6CBD1D9D1E91EE4E006D1BE4 /* Tulip_Stage_1.png in Resources */,
@@ -420,6 +435,7 @@
 				6C5BCEB41EB12418004A0777 /* farmIcon.png in Resources */,
 				6C519EFB1E934EF90018A924 /* wateredFloor.png in Resources */,
 				6CBD1D331E9188D7006D1BE4 /* LaunchScreen.storyboard in Resources */,
+				6C6BAC821EB3B20E0047FBE6 /* coin.png in Resources */,
 				6CBD1DA41E920698006D1BE4 /* wateringCan.png in Resources */,
 				6CBD1D891E91EE4E006D1BE4 /* Pumpkin_Stage_4.png in Resources */,
 				6CBD1D9A1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_4.png in Resources */,
@@ -430,7 +446,6 @@
 				6CBD1D871E91EE4E006D1BE4 /* Pumpkin_Stage_2.png in Resources */,
 				6C5BCEBA1EB13EB6004A0777 /* wateredFloor.png in Resources */,
 				6CBD1D791E91EE4E006D1BE4 /* Cauliflower_Stage_6.png in Resources */,
-				6C5BCEBC1EB1401B004A0777 /* coin.png in Resources */,
 				6CBD1D981E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_2.png in Resources */,
 				6CBD1D8F1E91EE4E006D1BE4 /* Radish_Stage_4.png in Resources */,
 				6CBD1D751E91EE4E006D1BE4 /* Cauliflower_Stage_2.png in Resources */,
@@ -445,6 +460,7 @@
 				6C5BCEB91EB13EB6004A0777 /* dryfloor.png in Resources */,
 				6CBD1D9B1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_5.png in Resources */,
 				6CBD1D761E91EE4E006D1BE4 /* Cauliflower_Stage_3.png in Resources */,
+				6C6BAC801EB3ADEF0047FBE6 /* cropinfo.png in Resources */,
 				6CBD1D861E91EE4E006D1BE4 /* Pumpkin_Stage_1.png in Resources */,
 				6CBD1D911E91EE4E006D1BE4 /* Sunflower_Stage_1.png in Resources */,
 				6CBD1D9C1E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_6.png in Resources */,
@@ -455,6 +471,7 @@
 				6CBD1D931E91EE4E006D1BE4 /* Sunflower_Stage_3.png in Resources */,
 				6CBD1D831E91EE4E006D1BE4 /* Potato_Stage_4.png in Resources */,
 				6CBD1DA81E920EE9006D1BE4 /* dryfloor.png in Resources */,
+				6C6BAC7E1EB398280047FBE6 /* backpack.png in Resources */,
 				6CBD1D991E91EE4E006D1BE4 /* Sweet_Gem_Berry_Stage_3.png in Resources */,
 				6CBD1D781E91EE4E006D1BE4 /* Cauliflower_Stage_5.png in Resources */,
 				6CBD1D941E91EE4E006D1BE4 /* Sunflower_Stage_4.png in Resources */,
@@ -477,6 +494,7 @@
 				6CBD1D251E9188D7006D1BE4 /* main.m in Sources */,
 				6CBD1D3C1E91B1A3006D1BE4 /* plantInfo.m in Sources */,
 				6CADC70C1EAA70D400001FED /* StoreViewController.m in Sources */,
+				6C6BAC361EB383D80047FBE6 /* bagItemTemplate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

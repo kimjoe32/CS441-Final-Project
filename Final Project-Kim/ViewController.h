@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "plantInfo.h"
 #import "AppDelegate.h"
+#import "bagController.h"
 
-@interface ViewController : UIViewController <UITabBarDelegate>
+@interface ViewController : UIViewController <UITabBarDelegate,
+                                                UICollectionViewDataSource,
+                                                UICollectionViewDelegate>
 
 @property (nonatomic, retain) IBOutletCollection(UIButton) NSArray *plantButtons;
 @property (nonatomic, retain) IBOutletCollection(UIImageView) NSArray *groundImages;
@@ -21,6 +24,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *cropTimeRemainingLabel;
 @property (nonatomic) plantTypes * plantToSow;
 @property (strong, nonatomic) IBOutlet UILabel *moneyLabel;
+@property (strong, nonatomic) IBOutlet UICollectionView *bagCollectionView;
 
 - (IBAction) harvestButton: (id) sender;
 - (IBAction) waterButton: (id) sender;

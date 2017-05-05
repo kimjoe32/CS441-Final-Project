@@ -129,54 +129,63 @@
             buyPrice = 0;
             growTime = 0;
             totalGrowTime = 0;
+            break;
             
         case CAULIFLOWER:
             sellPrice = 175;
             buyPrice = 0;
             growTime += 1*60;
             totalGrowTime = 12*60;
+            break;
             
         case MELON:
             sellPrice = 250;
             buyPrice = 0;
             growTime += 1*60;
             totalGrowTime = 12*60;
+            break;
             
         case POTATO:
             sellPrice = 80;
             buyPrice = 0;
             growTime += 1*60;
             totalGrowTime = 6*60;
+            break;
             
         case PUMPKIN:
             sellPrice = 320;
             buyPrice = 0;
             growTime += 1*60;
             totalGrowTime = 13*60;
+            break;
             
         case RADISH:
             sellPrice = 90;
             buyPrice = 0;
             growTime += 2*60;
             totalGrowTime = 6*60;
+            break;
             
         case SUNFLOWER:
             sellPrice = 80;
             buyPrice = 0;
             growTime += 1*60;
             totalGrowTime = 8*60;
+            break;
             
         case SWEETGEMBERRY:
             sellPrice = 3000;
             buyPrice = 0;
             growTime += 1*60;
             totalGrowTime = 24*60;
+            break;
             
         case TULIP:
             sellPrice = 30;
             buyPrice = 0;
             growTime += 1*60;
             totalGrowTime = 6*60;
+            break;
     }
 }
 

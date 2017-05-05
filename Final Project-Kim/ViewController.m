@@ -9,11 +9,15 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+{
+    NSArray * bagItems;
+}
 @end
 
 NSMutableArray * plantInfoArray;
 BOOL wateringMode;
 BOOL harvestingMode;
+BOOL plantMode;
 AppDelegate * appd;
 @implementation ViewController
 
@@ -43,7 +47,12 @@ AppDelegate * appd;
     [_moneyLabel setText:[NSString stringWithFormat:@"%ld", appd.money]];
     wateringMode = FALSE;
     harvestingMode = FALSE;
+    plantMode = FALSE;
+    
+    bagItems = [[[plantInfo alloc] getAllPlants] copy];
 }
+
+
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder
 {   //save states
@@ -201,8 +210,37 @@ AppDelegate * appd;
     [_waterButton setImage:[UIImage imageNamed:@"wateringCan.png"] forState:UIControlStateNormal];
 }
 
+- (NSInteger) collectionView:(UICollectionView *)collectionView
+      numberOfItemsInSection:(NSInteger)section
+{
+    return [bagItems count];
+}
+
+- (UICollectionViewCell*) collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath
+{
+    NSString * identifier = [NSString stringWithFormat:@"bagItemCell1%@", indexPath];
+    
+    bagItemCell *cell = [_bagCollectionView
+                              dequeueReusableCellWithReuseIdentifier:identifier
+                                                        forIndexPath:indexPath];
+    [cell setBagItem:[bagItems objectAtIndex:indexPath.row]];
+    return cell;
+}
+
+
+- (void)    collectionView:(UICollectionView *)collectionView
+  didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    bagItemCell * cell = (bagItemCell*)[_bagCollectionView cellForItemAtIndexPath:indexPath];
+    appd.selectedPlant = cell.plantInfo;
+    plantMode = TRUE;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 @end

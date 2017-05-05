@@ -37,12 +37,15 @@ AppDelegate * appdel;
 {
     static NSString *simpleTableIdentifier = @"SimpleTableItem";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    UITableViewCell *cell;// = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    //cell = [cell initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
     
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
     }
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld", [[tableDataArray objectAtIndex:indexPath.row] sellPrice]];
     
     [[cell imageView] setImage: [[tableDataArray objectAtIndex:indexPath.row] getImageForType]];
     cell.textLabel.text = [[tableDataArray objectAtIndex:indexPath.row] getPlantTypeString];

@@ -14,6 +14,8 @@
 
 @implementation AppDelegate
 @synthesize money;
+@synthesize selectedPlant;
+@synthesize plantingCount;
 -(BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
 {
     return YES;

@@ -35,6 +35,7 @@ typedef enum
 - (void) loadData;
 - (double) remainingGrowTime;
 - (void) killPlant;
+
 - (NSMutableArray*) getAllPlants;
 - (UIImage*) getImageForType;
 - (NSString*) getPlantTypeString;
@@ -47,4 +48,5 @@ typedef enum
 - (UIImage*) upgradeSunflower;
 - (UIImage*) upgradeSweetGemBerry;
 - (UIImage*) upgradeTulip;
+- (void) checkWater;
 @end

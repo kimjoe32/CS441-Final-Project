@@ -25,6 +25,15 @@
     lastWatered = [NSDate date];
 }
 
+- (void) checkWater
+{
+    if ([lastWatered timeIntervalSinceNow] < 12*60*60)
+    {
+        isWatered = FALSE;
+        lastWatered = nil;
+    }
+}
+
 - (void) killPlant
 {
     isPlanted = FALSE;
@@ -40,6 +49,7 @@
 - (NSMutableArray*) getAllPlants
 {
     NSMutableArray * allPlantsArr = [[NSMutableArray alloc] init];
+    
     for (int i =1; i < plantTypeCount; i++)
     {
         plantInfo * pi = [plantInfo alloc];
@@ -133,56 +143,56 @@
             
         case CAULIFLOWER:
             sellPrice = 175;
-            buyPrice = 0;
+            buyPrice = 80;
             growTime += 1*60;
             totalGrowTime = 12*60;
             break;
             
         case MELON:
             sellPrice = 250;
-            buyPrice = 0;
+            buyPrice = 80;
             growTime += 1*60;
             totalGrowTime = 12*60;
             break;
             
         case POTATO:
             sellPrice = 80;
-            buyPrice = 0;
+            buyPrice = 50;
             growTime += 1*60;
             totalGrowTime = 6*60;
             break;
             
         case PUMPKIN:
             sellPrice = 320;
-            buyPrice = 0;
+            buyPrice = 100;
             growTime += 1*60;
             totalGrowTime = 13*60;
             break;
             
         case RADISH:
             sellPrice = 90;
-            buyPrice = 0;
+            buyPrice = 40;
             growTime += 2*60;
             totalGrowTime = 6*60;
             break;
             
         case SUNFLOWER:
             sellPrice = 80;
-            buyPrice = 0;
+            buyPrice = 200;
             growTime += 1*60;
             totalGrowTime = 8*60;
             break;
             
         case SWEETGEMBERRY:
             sellPrice = 3000;
-            buyPrice = 0;
+            buyPrice = 1000;
             growTime += 1*60;
             totalGrowTime = 24*60;
             break;
             
         case TULIP:
             sellPrice = 30;
-            buyPrice = 0;
+            buyPrice = 20;
             growTime += 1*60;
             totalGrowTime = 6*60;
             break;
@@ -209,10 +219,15 @@
 - (UIImage*) upgrade
 {
     plantStage++;
+    if ([plantTime timeIntervalSinceNow] < growTime)
+    {
+        return [self getImageForType];
+    }
+    
     switch(plantType)
     {
         default:
-            return nil;
+            return [self getImageForType];
             
         case CAULIFLOWER:
             return [self upgradeCauliflower];

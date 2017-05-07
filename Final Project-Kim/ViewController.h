@@ -31,8 +31,9 @@
 - (IBAction) harvestButton: (id) sender;
 - (IBAction) waterButton: (id) sender;
 - (IBAction) plantButton: (id) sender;
-- (IBAction) tapAnywhereElse:(id)sender;
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 - (IBAction) backpackButton:(id)sender;
+- (void) checkPlants;
 
 @end
 

@@ -44,65 +44,57 @@ AppDelegate * appdel;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld", [pi sellPrice]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld", [pi buyPrice]];
     
     [[cell imageView] setImage: [pi getImageForType]];
     cell.textLabel.text = [pi getPlantTypeString];
     
     return cell;
 }
+
 - (void)            tableView:(UITableView *)tableView
       didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     plantInfo * pi = [tableDataArray objectAtIndex:indexPath.row];
     NSString * plantName = [pi getPlantTypeString];
-    NSString * purchaseString = [NSString stringWithFormat:@"Purchase: %@",plantName];
+    NSString * purchaseString =
+                    [NSString stringWithFormat:@"Purchase %@ for %ld",plantName, pi.buyPrice];
     
-    UIAlertController * alertController = [UIAlertController
-                                           alertControllerWithTitle: plantName
-                                           message: purchaseString
-                                           preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:plantName
+                                 message:purchaseString
+                                 preferredStyle:UIAlertControllerStyleAlert];
     
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"Amount";
-        textField.textColor = [UIColor blueColor];
-        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-        textField.borderStyle = UITextBorderStyleRoundedRect;
-        textField.keyboardType = UIKeyboardTypeNumberPad;
-    }];
+    //Add Buttons
     
-    [alertController addAction:[UIAlertAction
-                                actionWithTitle:@"OK"
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"Yes"
                                 style:UIAlertActionStyleDefault
-                                handler:^(UIAlertAction *action) {
-                                    NSArray * textfields = alertController.textFields;
-                                    UITextField * amountField = textfields[0];
-                                    NSInteger amount = [amountField.text integerValue];
-                                    if (amount * [pi sellPrice] >= appdel.money)
+                                handler:^(UIAlertAction * action) {
+                                    if (appdel.money >= pi.buyPrice)
                                     {
-                                        amountField.text = @"";
+                                        appdel.money -= pi.buyPrice;
+                                        [self boughtItem:plantName];
                                     }
-                                    else
-                                    {
-                                        appdel.money -= amount * [pi sellPrice];
-                                        [self boughtItem:plantName amount:amount];
-                                    }
-                                }]];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel"
-                                                        style:UIAlertActionStyleCancel
-                                                      handler:nil]];
+                                }];
     
-    [self presentViewController:alertController animated:TRUE completion:nil];
+    UIAlertAction * cancelButton = [UIAlertAction actionWithTitle:@"Cancel"
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:nil];
+    //Add your buttons to alert controller
+    
+    [alert addAction:yesButton];
+    [alert addAction:cancelButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void) boughtItem: (NSString*) plantName
-             amount: (NSInteger) amount
 {
-    // All instances of TestClass will be notified
+    [_moneyLabel setText:[NSString stringWithFormat:@"%ld", appdel.money]];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"TestNotification"
-                                                        object:self];
+                                                        object:plantName];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

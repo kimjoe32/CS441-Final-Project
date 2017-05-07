@@ -23,39 +23,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="ground1" image="dryfloor.png" translatesAutoresizingMaskIntoConstraints="NO" id="oeL-HO-aF9" userLabel="ground1">
-                                <rect key="frame" x="52" y="120" width="100" height="100"/>
+                                <rect key="frame" x="55" y="123" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="ground2" image="dryfloor.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kv6-km-eib" userLabel="ground2">
-                                <rect key="frame" x="153" y="120" width="100" height="100"/>
+                                <rect key="frame" x="156" y="123" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="ground3" image="dryfloor.png" translatesAutoresizingMaskIntoConstraints="NO" id="hrb-lB-G3d" userLabel="ground3">
-                                <rect key="frame" x="254" y="120" width="100" height="100"/>
+                                <rect key="frame" x="257" y="123" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="ground4" image="dryfloor.png" translatesAutoresizingMaskIntoConstraints="NO" id="kLk-yS-G21" userLabel="ground4">
-                                <rect key="frame" x="52" y="221" width="100" height="100"/>
+                                <rect key="frame" x="55" y="224" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="ground5" image="dryfloor.png" translatesAutoresizingMaskIntoConstraints="NO" id="i6s-Qq-3BC" userLabel="ground5">
-                                <rect key="frame" x="153" y="221" width="100" height="100"/>
+                                <rect key="frame" x="156" y="224" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="ground6" image="dryfloor.png" translatesAutoresizingMaskIntoConstraints="NO" id="pf3-t1-YRB" userLabel="ground6">
-                                <rect key="frame" x="254" y="221" width="100" height="100"/>
+                                <rect key="frame" x="257" y="224" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="ground7" image="dryfloor.png" translatesAutoresizingMaskIntoConstraints="NO" id="P8j-wX-Bsy" userLabel="ground7">
-                                <rect key="frame" x="52" y="322" width="100" height="100"/>
+                                <rect key="frame" x="55" y="325" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="ground8" image="dryfloor.png" translatesAutoresizingMaskIntoConstraints="NO" id="DCH-MW-wT1" userLabel="ground8">
-                                <rect key="frame" x="153" y="322" width="100" height="100"/>
+                                <rect key="frame" x="156" y="325" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="ground9" image="dryfloor.png" translatesAutoresizingMaskIntoConstraints="NO" id="YFN-p4-b4p" userLabel="ground9">
-                                <rect key="frame" x="254" y="322" width="100" height="100"/>
+                                <rect key="frame" x="257" y="325" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="plant1" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAG-NZ-Lfh" userLabel="plant1">
@@ -148,7 +148,7 @@
                                 <rect key="frame" x="20" y="626" width="40" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VD7-6N-dGx">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VD7-6N-dGx" userLabel="bagButton">
                                 <rect key="frame" x="254" y="579" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="backpack.png"/>
@@ -306,11 +306,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="tbR-cC-0IB">
-                    <connections>
-                        <action selector="tapAnywhereElse:" destination="BYZ-38-t0r" id="U87-Tw-thI"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="tbR-cC-0IB"/>
             </objects>
             <point key="canvasLocation" x="1191" y="40"/>
         </scene>

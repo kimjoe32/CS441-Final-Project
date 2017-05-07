@@ -36,10 +36,10 @@ AppDelegate * appd;
         [plantInfoArray addObject:pi];
     }
     
-    for (UIImageView * img in _groundImages)
+    for (UIButton * b in _plantButtons)
     {
         //set image of ground patches
-        [img setImage:[UIImage imageNamed:@"dryFloor.png"]];
+        [b.imageView setImage:[UIImage imageNamed:@"dryFloor.png"]];
     }
     
     appd.money = 500;
@@ -58,6 +58,30 @@ AppDelegate * appd;
                                              selector:@selector(receiveTestNotification:)
                                                  name:@"TestNotification"
                                                object:nil];
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0f
+                                     target:self
+                                   selector:@selector(checkPlants)
+                                   userInfo:nil
+                                    repeats:YES];
+}
+
+- (void) checkPlants
+{
+    for (int i = 0; i < 9; i++)
+    {
+        plantInfo * pi = plantInfoArray[i];
+        UIButton * btn = _plantButtons[i];
+        UIImageView * groundImg = _groundImages[i];
+        
+        [pi checkWater];
+        if (!pi.isWatered)
+        {
+            [btn.imageView setImage:[UIImage imageNamed:@"dryfloor.png"]];
+        }
+        
+        groundImg.image = [pi upgrade];
+    }
 }
 
 
@@ -83,6 +107,8 @@ AppDelegate * appd;
     }
     
     [[NSUserDefaults standardUserDefaults] setInteger:appd.money forKey:@"money"];
+    
+    [coder encodeObject:bagItems forKey:@"bagItems"];
 }
 
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder
@@ -104,12 +130,12 @@ AppDelegate * appd;
     for (UIImageView * img in _groundImages)
     {
         [img setImage: [UIImage imageWithData:[coder decodeObjectForKey:img.restorationIdentifier]]];
-//        NSLog(@"restID =  %@", img.restorationIdentifier);
     }
     
     appd.money = [[NSUserDefaults standardUserDefaults] integerForKey:
                  [NSString stringWithFormat:@"money"]];
     
+    [coder decodeObjectForKey:@"bagItems"];
     [_moneyLabel setText:[NSString stringWithFormat:@"%ld", appd.money]];
 }
 
@@ -119,22 +145,39 @@ AppDelegate * appd;
     plantInfo * pi = plantInfoArray[location - 1];
     UIButton * btn = _plantButtons[location - 1];
     UIImageView * img = _groundImages[location - 1];
+    
     if (harvestingMode) //harvest the plant
     {
         if ([pi canHarvest])
         {
             [pi harvest];
-            [btn setImage:nil forState:UIControlStateNormal];
+            [img setImage:nil];
             appd.money += [pi sellPrice];
             
             [_moneyLabel setText:[NSString stringWithFormat:@"%ld", appd.money]];
             [pi killPlant];
         }
     }
-    else if (wateringMode) //water the plant
+    else if (wateringMode) //water the  plant
     {
         [pi water];
-        [img setImage:[UIImage imageNamed:@"wateredFloor.png"]];
+        [btn.imageView setImage:[UIImage imageNamed:@"wateredFloor.png"]];
+    }
+    else if (plantingCount >= 0)
+    {
+        [pi plantCrop:selectedPlant.plantType];
+        plantingCount--;
+        for (UICollectionViewCell * cell in [_bagCollectionView visibleCells])
+        {
+            bagItemCell *b = (bagItemCell*) cell;
+            if ([[b.plantInfo getPlantTypeString] isEqualToString:selectedPlant.getPlantTypeString])
+            {
+                b.amount--;
+                if (b.amount <= 0)
+                    b.alpha = 0.25f;
+                return;
+            }
+        }
     }
     else
     {   //get + print plant info
@@ -169,7 +212,10 @@ AppDelegate * appd;
     for (UICollectionViewCell * cell in [_bagCollectionView visibleCells])
     {
         bagItemCell *b = (bagItemCell*) cell;
-        if ([b amount] <= 0) [b setOpaque:TRUE];
+        if (b.amount <= 0)
+        {
+            b.alpha = 0.25f;
+        }
     }
     [_bagCollectionView setHidden:FALSE];
 }
@@ -210,8 +256,14 @@ AppDelegate * appd;
     }
 }
 
-- (IBAction) tapAnywhereElse:(id)sender
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    UITouch *touch = [touches anyObject];
+    
+    if(![touch.view.restorationIdentifier isEqualToString:@"view1"])
+    {
+        return;
+    }
     wateringMode = FALSE;
     harvestingMode = FALSE;
     [self setPlantInfoPaneToEmpty];
@@ -220,7 +272,7 @@ AppDelegate * appd;
     [_harvestButton setImage:[UIImage imageNamed:@"harvest.png"] forState:UIControlStateNormal];
     [_waterButton setImage:[UIImage imageNamed:@"wateringCan.png"] forState:UIControlStateNormal];
     
-    if (_bagCollectionView.isHidden) _bagCollectionView.hidden = TRUE;
+    if (!_bagCollectionView.isHidden) _bagCollectionView.hidden = TRUE;
 }
 
 - (NSInteger)   collectionView:(UICollectionView *)collectionView
@@ -239,38 +291,48 @@ AppDelegate * appd;
                               dequeueReusableCellWithReuseIdentifier:identifier
                                                         forIndexPath:indexPath];
     [cell setBagItem: [bagItems objectAtIndex:indexPath.row]];
+    if (cell.amount < 1.0f)
+    {
+        cell.alpha = 0.25f;
+    }
+    
     return cell;
 }
 
 - (void)    collectionView:(UICollectionView *)collectionView
   didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    bagItemCell * b = (bagItemCell*) collectionView;
-    if ([b isOpaque]) return;
+    bagItemCell * b = (bagItemCell*)[_bagCollectionView cellForItemAtIndexPath:indexPath];
     
+    if (b.alpha <= 1.0f) return;
+    NSLog(@"picked plant");
     if ([b amount] > 0)
     {
-        bagItemCell * cell = (bagItemCell*)[_bagCollectionView cellForItemAtIndexPath:indexPath];
-        selectedPlant = cell.plantInfo;
+        selectedPlant = b.plantInfo;
         plantingCount = [b amount];
         plantMode = TRUE;
         [_bagCollectionView setHidden:TRUE];
     }
 }
 
-
 - (void) receiveTestNotification:(NSNotification *) notification
 {
-    // [notification name] should always be @"TestNotification"
-    // unless you use this method for observation of other notifications
-    // as well.
-    
-    if ([[notification name] isEqualToString:@"TestNotification"])
-        NSLog (@"Successfully received the test notification!");
+    NSString *plantName = notification.object;
+    [_moneyLabel setText:[NSString stringWithFormat:@"%ld", appd.money]];
+    for (UICollectionViewCell * cell in [_bagCollectionView visibleCells])
+    {
+        bagItemCell *b = (bagItemCell*) cell;
+        if ([[b.plantInfo getPlantTypeString] isEqualToString:plantName])
+        {
+            b.amount++;
+            b.alpha = 1.0f;
+            return;
+        }
+    }
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 @end

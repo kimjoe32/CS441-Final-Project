@@ -10,7 +10,7 @@
 #import "plantInfo.h"
 #import "AppDelegate.h"
 
-@interface StoreViewController : UIViewController <UITableViewDelegate>
+@interface StoreViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *plantsListTableView;
 @property (strong, nonatomic) IBOutlet UILabel *moneyLabel;
 @end

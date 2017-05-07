@@ -13,7 +13,5 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic) NSInteger money;
-@property (nonatomic) plantInfo* selectedPlant;
-@property (nonatomic) NSInteger plantingCount;
 @end
 

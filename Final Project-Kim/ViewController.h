@@ -25,13 +25,14 @@
 @property (nonatomic) plantTypes * plantToSow;
 @property (strong, nonatomic) IBOutlet UILabel *moneyLabel;
 @property (strong, nonatomic) IBOutlet UICollectionView *bagCollectionView;
+@property (nonatomic) plantInfo* selectedPlant;
+@property (nonatomic) NSInteger plantingCount;
 
 - (IBAction) harvestButton: (id) sender;
 - (IBAction) waterButton: (id) sender;
 - (IBAction) plantButton: (id) sender;
 - (IBAction) tapAnywhereElse:(id)sender;
 - (IBAction) backpackButton:(id)sender;
-
 
 @end
 

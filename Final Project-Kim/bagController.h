@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) IBOutlet UIImageView *itemImageView;
 @property (nonatomic, strong) plantInfo * plantInfo;
+@property (nonatomic, strong) IBOutlet UILabel * amountLabel;
 @property (nonatomic) NSInteger amount;
 
 - (void) setBagItem:(plantInfo *)item;

@@ -20,11 +20,10 @@ BOOL harvestingMode;
 BOOL plantMode;
 AppDelegate * appd;
 @implementation ViewController
-
+@synthesize selectedPlant;
+@synthesize plantingCount;
 - (void)viewDidLoad
 {
-    NSLog(@"viewdidload");
-
     appd = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     for (NSInteger i =0; i < [_plantButtons count]; i++)
     {
@@ -50,8 +49,16 @@ AppDelegate * appd;
     plantMode = FALSE;
     
     bagItems = [[[plantInfo alloc] getAllPlants] copy];
+    _bagCollectionView.delegate = self;
+    _bagCollectionView.dataSource = self;
+    _bagCollectionView.layer.borderWidth = 3;
+    _bagCollectionView.layer.borderColor = [UIColor brownColor].CGColor;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveTestNotification:)
+                                                 name:@"TestNotification"
+                                               object:nil];
 }
-
 
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder
@@ -159,7 +166,12 @@ AppDelegate * appd;
 
 - (IBAction) backpackButton: (id)sender
 {
-    
+    for (UICollectionViewCell * cell in [_bagCollectionView visibleCells])
+    {
+        bagItemCell *b = (bagItemCell*) cell;
+        if ([b amount] <= 0) [b setOpaque:TRUE];
+    }
+    [_bagCollectionView setHidden:FALSE];
 }
 
 - (IBAction) waterButton: (id) sender
@@ -178,7 +190,6 @@ AppDelegate * appd;
         wateringMode = FALSE;
         harvestingMode = FALSE;
     }
-    
 }
 
 - (IBAction) harvestButton: (id) sender
@@ -208,10 +219,12 @@ AppDelegate * appd;
     [_harvestButton setEnabled: TRUE];
     [_harvestButton setImage:[UIImage imageNamed:@"harvest.png"] forState:UIControlStateNormal];
     [_waterButton setImage:[UIImage imageNamed:@"wateringCan.png"] forState:UIControlStateNormal];
+    
+    if (_bagCollectionView.isHidden) _bagCollectionView.hidden = TRUE;
 }
 
-- (NSInteger) collectionView:(UICollectionView *)collectionView
-      numberOfItemsInSection:(NSInteger)section
+- (NSInteger)   collectionView:(UICollectionView *)collectionView
+        numberOfItemsInSection:(NSInteger)section
 {
     return [bagItems count];
 }
@@ -219,28 +232,45 @@ AppDelegate * appd;
 - (UICollectionViewCell*) collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    NSString * identifier = [NSString stringWithFormat:@"bagItemCell1%@", indexPath];
+    NSString * identifier = [NSString stringWithFormat:@"bagItemCell1%ld", indexPath.row];
     
+    [_bagCollectionView registerClass:[bagItemCell class] forCellWithReuseIdentifier:identifier];
     bagItemCell *cell = [_bagCollectionView
                               dequeueReusableCellWithReuseIdentifier:identifier
                                                         forIndexPath:indexPath];
-    [cell setBagItem:[bagItems objectAtIndex:indexPath.row]];
+    [cell setBagItem: [bagItems objectAtIndex:indexPath.row]];
     return cell;
 }
-
 
 - (void)    collectionView:(UICollectionView *)collectionView
   didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    bagItemCell * cell = (bagItemCell*)[_bagCollectionView cellForItemAtIndexPath:indexPath];
-    appd.selectedPlant = cell.plantInfo;
-    plantMode = TRUE;
+    bagItemCell * b = (bagItemCell*) collectionView;
+    if ([b isOpaque]) return;
+    
+    if ([b amount] > 0)
+    {
+        bagItemCell * cell = (bagItemCell*)[_bagCollectionView cellForItemAtIndexPath:indexPath];
+        selectedPlant = cell.plantInfo;
+        plantingCount = [b amount];
+        plantMode = TRUE;
+        [_bagCollectionView setHidden:TRUE];
+    }
+}
+
+
+- (void) receiveTestNotification:(NSNotification *) notification
+{
+    // [notification name] should always be @"TestNotification"
+    // unless you use this method for observation of other notifications
+    // as well.
+    
+    if ([[notification name] isEqualToString:@"TestNotification"])
+        NSLog (@"Successfully received the test notification!");
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 @end

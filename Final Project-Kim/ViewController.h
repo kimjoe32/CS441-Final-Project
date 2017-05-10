@@ -22,9 +22,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *cropNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *cropSellPriceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *cropTimeRemainingLabel;
-@property (nonatomic) plantTypes * plantToSow;
 @property (strong, nonatomic) IBOutlet UILabel *moneyLabel;
 @property (strong, nonatomic) IBOutlet UICollectionView *bagCollectionView;
+@property (strong, nonatomic) IBOutlet UIImageView *displaySelectedPlant;
+@property (strong, nonatomic) IBOutlet UIImageView *fieldBorder;
 @property (nonatomic) plantInfo* selectedPlant;
 @property (nonatomic) NSInteger plantingCount;
 

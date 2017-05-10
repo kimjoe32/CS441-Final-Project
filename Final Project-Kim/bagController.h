@@ -19,7 +19,7 @@
 @property (nonatomic) NSInteger amount;
 
 - (void) setBagItem:(plantInfo *)item;
-- (void) addItem: (plantInfo*) plant amount:(NSInteger*) amount;
+- (void) updateAmount;
 @end
 
 

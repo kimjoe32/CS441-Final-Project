@@ -25,13 +25,14 @@ AppDelegate * appd;
 - (void)viewDidLoad
 {
     appd = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    plantInfoArray = [[NSMutableArray alloc] init];
     for (NSInteger i =0; i < [_plantButtons count]; i++)
     {
         plantInfo * pi = [plantInfo alloc];
         pi.isWatered = NO;
         pi.isPlanted = NO;
-        pi.lastWatered = nil;
-        pi.plantTime = nil;
+        pi.lastWatered = 0;
+        pi.plantTime = 0;
         pi.location = i + 1;
         [plantInfoArray addObject:pi];
     }
@@ -39,7 +40,7 @@ AppDelegate * appd;
     for (UIButton * b in _plantButtons)
     {
         //set image of ground patches
-        [b.imageView setImage:[UIImage imageNamed:@"dryFloor.png"]];
+        [b setImage:[UIImage imageNamed:@"dryFloor.png"] forState:UIControlStateNormal];
     }
     
     appd.money = 500;
@@ -51,8 +52,8 @@ AppDelegate * appd;
     bagItems = [[[plantInfo alloc] getAllPlants] copy];
     _bagCollectionView.delegate = self;
     _bagCollectionView.dataSource = self;
-    _bagCollectionView.layer.borderWidth = 3;
-    _bagCollectionView.layer.borderColor = [UIColor brownColor].CGColor;
+    
+    [self makeShadowsAndBorders];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveTestNotification:)
@@ -66,21 +67,75 @@ AppDelegate * appd;
                                     repeats:YES];
 }
 
-- (void) checkPlants
+- (void) makeShadowsAndBorders
 {
+    //shadows for "selected plant" image, wateringcan button, harvestcrop button, and bag
+    _displaySelectedPlant.layer.masksToBounds = NO;
+    _displaySelectedPlant.layer.shadowOpacity = 0.75f;
+    _displaySelectedPlant.layer.shadowRadius = 5.0f;
+    _displaySelectedPlant.layer.shadowColor = [UIColor blackColor].CGColor;
+    _displaySelectedPlant.layer.shadowPath =
+        [UIBezierPath bezierPathWithRoundedRect:_displaySelectedPlant.bounds
+                              byRoundingCorners:UIRectCornerAllCorners
+                                    cornerRadii:CGSizeMake(0.55, 0.55)].CGPath;
+    _displaySelectedPlant.clipsToBounds = NO;
+    _displaySelectedPlant.layer.shadowOffset = CGSizeMake(5, 5);
+    _displaySelectedPlant.layer.shouldRasterize = YES;
+    
+    
+    _waterButton.layer.masksToBounds = NO;
+    _waterButton.layer.shadowOpacity = 0.75f;
+    _waterButton.layer.shadowRadius = 5.0f;
+    _waterButton.layer.shadowColor = [UIColor blackColor].CGColor;
+    
+    _waterButton.clipsToBounds = NO;
+    _waterButton.layer.shadowOffset = CGSizeMake(5, 5);
+    _waterButton.layer.shouldRasterize = YES;
+    
+
+    _harvestButton.layer.masksToBounds = NO;
+    _harvestButton.layer.shadowOpacity = 0.75f;
+    _harvestButton.layer.shadowRadius = 5.0f;
+    _harvestButton.layer.shadowColor = [UIColor blackColor].CGColor;
+    
+    _harvestButton.clipsToBounds = NO;
+    _harvestButton.layer.shadowOffset = CGSizeMake(5, 5);
+    _harvestButton.layer.shouldRasterize = YES;
+
+    //borders
+    _bagCollectionView.layer.borderWidth = 3;
+    _bagCollectionView.layer.borderColor = [UIColor brownColor].CGColor;
+    
+    _displaySelectedPlant.layer.borderWidth = 2.0f;
+    _displaySelectedPlant.layer.borderColor = [UIColor brownColor].CGColor;
+    _displaySelectedPlant.backgroundColor= [UIColor whiteColor];
+
+    //border which surrounds field (area where crops are placed)
+    _fieldBorder.layer.borderWidth= 3.0f;
+    _fieldBorder.layer.borderColor = [UIColor brownColor].CGColor;
+}
+
+- (void) checkPlants //bad function name
+{
+    //updates items in main view
     for (int i = 0; i < 9; i++)
     {
         plantInfo * pi = plantInfoArray[i];
         UIButton * btn = _plantButtons[i];
         UIImageView * groundImg = _groundImages[i];
         
+        
+        //update ground to represent dry floor if it's been a while since watered
         [pi checkWater];
         if (!pi.isWatered)
         {
-            [btn.imageView setImage:[UIImage imageNamed:@"dryfloor.png"]];
+            [btn setImage:[UIImage imageNamed:@"dryfloor.png"] forState:UIControlStateNormal];
         }
         
-        groundImg.image = [pi upgrade];
+        //if the plant reaches next growth stage, update picture
+        UIImage* t = [pi upgrade];
+        if ( t != nil)
+            groundImg.image = t;
     }
 }
 
@@ -141,46 +196,61 @@ AppDelegate * appd;
 
 - (IBAction) plantButton: (id) sender
 {
-    NSInteger location = [sender tag];
-    plantInfo * pi = plantInfoArray[location - 1];
-    UIButton * btn = _plantButtons[location - 1];
-    UIImageView * img = _groundImages[location - 1];
+    //button for when a plant/ground is selected
+    NSInteger location = [sender tag] - 1;
+    plantInfo * pi = plantInfoArray[location];
+    UIButton * btn = _plantButtons[location];
+    UIImageView * img = _groundImages[location];
     
     if (harvestingMode) //harvest the plant
     {
         if ([pi canHarvest])
         {
+            //harvestable: add to money and clear images
+            appd.money += [pi sellPrice];
             [pi harvest];
             [img setImage:nil];
-            appd.money += [pi sellPrice];
             
             [_moneyLabel setText:[NSString stringWithFormat:@"%ld", appd.money]];
-            [pi killPlant];
         }
     }
     else if (wateringMode) //water the  plant
     {
         [pi water];
-        [btn.imageView setImage:[UIImage imageNamed:@"wateredFloor.png"]];
+        [btn setImage:[UIImage imageNamed:@"wateredFloor.png"] forState:UIControlStateNormal];
     }
-    else if (plantingCount >= 0)
+    else if (plantingCount > 0)
     {
-        [pi plantCrop:selectedPlant.plantType];
-        plantingCount--;
+        //attempting to plant a crop
+        img.image = [pi plantCrop:selectedPlant.plantType];
+        
+        plantingCount--; // amount of seeds available to plant
+        
         for (UICollectionViewCell * cell in [_bagCollectionView visibleCells])
         {
+            //find the right corresponding plant in the bag to update total amount of seeds in bag
             bagItemCell *b = (bagItemCell*) cell;
             if ([[b.plantInfo getPlantTypeString] isEqualToString:selectedPlant.getPlantTypeString])
             {
                 b.amount--;
                 if (b.amount <= 0)
                     b.alpha = 0.25f;
+                [b updateAmount];
                 return;
             }
         }
+        
+        if (plantingCount <= 0)
+        {
+            //no more seeds left: remove selected plant image/selected plant
+            _displaySelectedPlant.image = nil;
+            selectedPlant = nil;
+            plantingCount = 0;
+        }
     }
     else
-    {   //get + print plant info
+    {
+        //get + print plant info
         plantInfo * pi =[plantInfoArray objectAtIndex:location];
         if ( ![pi isPlanted])
         {   //nothing is planted
@@ -204,11 +274,12 @@ AppDelegate * appd;
 {
     [_cropNameLabel setText:[pi getPlantTypeString]];
     [_cropSellPriceLabel setText:[NSString stringWithFormat:@"%ld", [pi sellPrice]]];
-    [_cropTimeRemainingLabel setText:[NSString stringWithFormat:@"%f", [pi remainingGrowTime]]];
+    [_cropTimeRemainingLabel setText:[NSString stringWithFormat:@"%.0f", [pi remainingGrowTime]]];
 }
 
 - (IBAction) backpackButton: (id)sender
 {
+    //open backpack. if plants don't have specific seeds, set it to transparent (not available)
     for (UICollectionViewCell * cell in [_bagCollectionView visibleCells])
     {
         bagItemCell *b = (bagItemCell*) cell;
@@ -217,19 +288,23 @@ AppDelegate * appd;
             b.alpha = 0.25f;
         }
     }
+    //reveal bag
     [_bagCollectionView setHidden:FALSE];
 }
 
 - (IBAction) waterButton: (id) sender
 {
     if (!wateringMode)
-    { //enable wateringmode
+    { //enable wateringmode and disable other modes
         [_harvestButton setEnabled: FALSE];
         wateringMode = TRUE;
         harvestingMode = FALSE;
+        selectedPlant = nil;
+        plantingCount = 0;
+        _displaySelectedPlant.image = nil;
         [_waterButton setImage:[UIImage imageNamed:@"wateringInAction.png"] forState:UIControlStateNormal];
     }
-    else //turn off watering mode
+    else //turn off watering mode if already selected
     {
         [_waterButton setImage:[UIImage imageNamed:@"wateringCan.png"] forState:UIControlStateNormal];
         [_harvestButton setEnabled: TRUE];
@@ -240,14 +315,17 @@ AppDelegate * appd;
 
 - (IBAction) harvestButton: (id) sender
 {
-    if (!harvestingMode)//enable harvesting mode
+    if (!harvestingMode)//enable harvesting mode and disable other modes
     {
         [_waterButton setEnabled: FALSE];
         harvestingMode = TRUE;
         wateringMode = FALSE;
+        selectedPlant = nil;
+        plantingCount = 0;
+        _displaySelectedPlant.image = nil;
         [_harvestButton setImage:[UIImage imageNamed:@"harvestInAction.png"] forState:UIControlStateNormal];
     }
-    else //turn off harvesting mode
+    else //turn off harvesting mode if already selected
     {
         [_harvestButton setImage:[UIImage imageNamed:@"harvest.png"] forState:UIControlStateNormal];
         [_waterButton setEnabled: TRUE];
@@ -264,6 +342,8 @@ AppDelegate * appd;
     {
         return;
     }
+    
+    //touched outside of any buttons, disable everything
     wateringMode = FALSE;
     harvestingMode = FALSE;
     [self setPlantInfoPaneToEmpty];
@@ -271,7 +351,9 @@ AppDelegate * appd;
     [_harvestButton setEnabled: TRUE];
     [_harvestButton setImage:[UIImage imageNamed:@"harvest.png"] forState:UIControlStateNormal];
     [_waterButton setImage:[UIImage imageNamed:@"wateringCan.png"] forState:UIControlStateNormal];
-    
+    selectedPlant = nil;
+    _displaySelectedPlant.image = nil;
+    plantingCount = 0;
     if (!_bagCollectionView.isHidden) _bagCollectionView.hidden = TRUE;
 }
 
@@ -291,8 +373,8 @@ AppDelegate * appd;
                               dequeueReusableCellWithReuseIdentifier:identifier
                                                         forIndexPath:indexPath];
     [cell setBagItem: [bagItems objectAtIndex:indexPath.row]];
-    if (cell.amount < 1.0f)
-    {
+    if (cell.amount < 1)
+    {   //loaded cell does not have any corresponding seeds diable button (set transparency)
         cell.alpha = 0.25f;
     }
     
@@ -304,11 +386,14 @@ AppDelegate * appd;
 {
     bagItemCell * b = (bagItemCell*)[_bagCollectionView cellForItemAtIndexPath:indexPath];
     
-    if (b.alpha <= 1.0f) return;
-    NSLog(@"picked plant");
+    if (b.alpha < 1.0f) return; //if no seeds for seleceted bag item, ignore it
+    
     if ([b amount] > 0)
     {
+        //selected seed to plant
+        //set it as selected plant and exit bag
         selectedPlant = b.plantInfo;
+        _displaySelectedPlant.image = [selectedPlant getImageForType];
         plantingCount = [b amount];
         plantMode = TRUE;
         [_bagCollectionView setHidden:TRUE];
@@ -317,6 +402,8 @@ AppDelegate * appd;
 
 - (void) receiveTestNotification:(NSNotification *) notification
 {
+    //received message from store
+    //plant is purchased, update bag and money
     NSString *plantName = notification.object;
     [_moneyLabel setText:[NSString stringWithFormat:@"%ld", appd.money]];
     for (UICollectionViewCell * cell in [_bagCollectionView visibleCells])
@@ -324,8 +411,10 @@ AppDelegate * appd;
         bagItemCell *b = (bagItemCell*) cell;
         if ([[b.plantInfo getPlantTypeString] isEqualToString:plantName])
         {
+            //find corresponding cell and update it
             b.amount++;
             b.alpha = 1.0f;
+            [b updateAmount];
             return;
         }
     }

@@ -17,10 +17,10 @@ typedef enum
 
 @property (nonatomic) BOOL isWatered;
 @property (nonatomic) BOOL isPlanted;
-@property (nonatomic) NSDate* plantTime;
-@property (nonatomic) NSDate* lastWatered;
-@property (nonatomic) NSTimeInterval growTime;
-@property (nonatomic) NSTimeInterval totalGrowTime;
+@property (nonatomic) NSInteger plantTime;
+@property (nonatomic) NSInteger lastWatered;
+@property (nonatomic) NSInteger growTime;
+@property (nonatomic) NSInteger totalGrowTime;
 @property (nonatomic) NSInteger location;
 @property (nonatomic) plantTypes plantType;
 @property (nonatomic) NSInteger plantStage;
@@ -28,13 +28,12 @@ typedef enum
 @property (nonatomic) NSInteger buyPrice;
 
 - (void) water;
-- (void) plantCrop: (plantTypes) type;
+- (UIImage*) plantCrop: (plantTypes) type;
 - (void) harvest;
 - (BOOL) canHarvest;
 - (void) saveData;
 - (void) loadData;
 - (double) remainingGrowTime;
-- (void) killPlant;
 
 - (NSMutableArray*) getAllPlants;
 - (UIImage*) getImageForType;
